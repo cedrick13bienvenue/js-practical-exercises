@@ -38,6 +38,10 @@ Array.prototype.myMap = function(callbackFn){
 Array.prototype.myFilter = function(callbackFn){
     let result = []
     for(leti=0;i<this.length;i++){
-        
+        if(callbackFn(this[i],i,this)){
+            result.push(this[i])
+        }
     }
 }
+
+// myReduce
