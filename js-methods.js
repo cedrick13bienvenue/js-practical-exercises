@@ -20,3 +20,24 @@
 // For myFilter, you'll need to create a new array, loop through each element, apply the callback function to test if the element passes the condition, and push the element into the new array if it passes the test.
 // For myReduce, you'll need to loop through each element, apply the callback function with the accumulator, and update the accumulator accordingly.
 // For myForEach, you'll need to loop through each element and execute the callback function for each element.
+
+
+
+
+// myMap
+Array.prototype.myMap = function(callbackFn){
+    let result = []
+    for(let i=0;i<this.length;i++){
+        result.push(callbackFn(this[i],i, this))
+    }
+    return result
+}
+
+// myFilter
+
+Array.prototype.myFilter = function(callbackFn){
+    let result = []
+    for(leti=0;i<this.length;i++){
+        
+    }
+}
