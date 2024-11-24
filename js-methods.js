@@ -46,6 +46,6 @@ Array.prototype.myFilter = function(callbackFn){
 
 // myReduce
 
-Array.prototype.myReduce = function(callbackFn{
+Array.prototype.myReduce = function(callbackFn){
     
-})
+}
