@@ -45,3 +45,5 @@ Array.prototype.myFilter = function(callbackFn){
 }
 
 // myReduce
+
+Array
