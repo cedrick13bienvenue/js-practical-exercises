@@ -14,7 +14,6 @@
 // myReduce(callbackFn, initialValue?): Applies the callback function against an accumulator and each element in the array to reduce it to a single value. Optionally, an initialValue can be provided as the initial value of the accumulator.
 // myForEach(callbackFn): Executes a provided function once for each array element.
 
-
 // Hints:
 // For myMap, you'll need to create a new array, loop through each element, apply the callback function to each element, and push the result into the new array.
 // For myFilter, you'll need to create a new array, loop through each element, apply the callback function to test if the element passes the condition, and push the element into the new array if it passes the test.
