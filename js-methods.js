@@ -23,7 +23,6 @@
 
 
 
-
 // myMap
 Array.prototype.myMap = function(callbackFn){
     let result = []
