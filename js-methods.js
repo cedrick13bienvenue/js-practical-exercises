@@ -22,7 +22,6 @@
 // For myForEach, you'll need to loop through each element and execute the callback function for each element.
 
 
-
 // myMap
 Array.prototype.myMap = function(callbackFn){
     let result = []
