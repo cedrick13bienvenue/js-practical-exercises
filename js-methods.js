@@ -44,5 +44,9 @@ Array.prototype.myFilter = function(callbackFn){
 // myReduce
 
 Array.prototype.myReduce = function(callbackFn){
-    
+    let result = initValue !== undefined ? initValue : this[0]
+    for(let i = initValue!==undefined ? 0:1; i<this.length; i++ ){
+        result(callbackFn(this[i],i,this))
+    }
+    return result
 }
