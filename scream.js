@@ -10,4 +10,4 @@ const scream  = function(x,y){
     return result
 }
 
-console.log(scream("i",7))
+console.log(scream("i",10))
