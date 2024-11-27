@@ -7,5 +7,3 @@ String.prototype.reverseMe = function(){
     }
     return result
 }
-let name = "Cedrick"
-console.log(name.reverseMe())
