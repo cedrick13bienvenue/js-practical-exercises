@@ -14,6 +14,7 @@ If an empty value ( null, None, Nothing, nil etc. ) is given instead of an array
  */}
 
  function sumArray(arr){
+    if (!arr || arr.length <= 1) return 0;
     let sum=0
     let max = Math.max(...arr)
     let min = Math.min(...arr)
