@@ -22,3 +22,10 @@ If an empty value ( null, None, Nothing, nil etc. ) is given instead of an array
     }
     return sum - max - min
  }
+ //OR 
+
+ function sumArray(arr){
+    let max = Math.max(...arr)
+    let min = Math.min(...arr)
+    return arr.reduce((x,y)=> x + y , 0) - max - min
+ }
