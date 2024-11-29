@@ -20,3 +20,17 @@ function sumString(a,b){
 }
 
 // OR
+
+function sumString(a,b){
+    let x = parseInt(a)
+    let y = parseInt(b)
+    if(isNaN(x)){
+        x=0
+    }
+    if(isNaN(y)){
+        y=0
+    }
+    let sum = x + y
+    return sum.toString()
+}
+
