@@ -34,3 +34,7 @@ function sumString(a,b){
     return sum.toString()
 }
 
+ // OR
+function sumString(a,b){
+    return String(Number(a)+Number(b))
+}
