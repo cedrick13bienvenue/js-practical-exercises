@@ -7,7 +7,6 @@ Assume that beast and dish are always lowercase strings, and that each has at le
  They will not contain numerals.*/}
 
  function feast(beast, dish) {
-    //your function here
       const x = dish[0];
       const y = beast[0]
       const a = dish[dish.length-1]
