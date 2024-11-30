@@ -6,4 +6,15 @@ Write a function feast that takes the animal's name and dish as arguments and re
 Assume that beast and dish are always lowercase strings, and that each has at least two letters. beast and dish may contain hyphens and spaces, but these will not appear at the beginning or end of the string.
  They will not contain numerals.*/}
 
- 
+ function feast(beast, dish) {
+    //your function here
+      const x = dish[0];
+      const y = beast[0]
+      const a = dish[dish.length-1]
+      const b = beast[beast.length-1]
+      if(x===y && a===b){
+        return true
+      }else{
+        return false
+      }
+    }
