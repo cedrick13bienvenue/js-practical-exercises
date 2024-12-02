@@ -12,4 +12,3 @@ function build(n){
     }
     return answer
 }
-console.log(build(10))
