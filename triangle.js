@@ -27,4 +27,12 @@ function reversed(z){
 
 // A Centered Triangle
 
-
+function centered(q){
+    let result = ""
+    for(let c=1;c<=q;c++){
+        let spaces = " ".repeat(q-c)
+        let stars = "*".repeat(2*c-1)
+        result += spaces+stars+"\n"
+    }
+    return result
+}
