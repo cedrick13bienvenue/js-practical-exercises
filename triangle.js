@@ -12,3 +12,7 @@ function build(n){
     }
     return answer
 }
+
+// Reversed Triangle
+
+
