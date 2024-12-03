@@ -24,3 +24,7 @@ function reversed(z){
     }
     return result
 }
+
+// A Centered Triangle
+
+
