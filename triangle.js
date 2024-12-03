@@ -17,7 +17,7 @@ function build(n){
 
 // Inverted Triangle
 
-function reversed(z){
+function inverted(z){
     let result = ""
     for(let a=z;a>0;a--){
         result+="*".repeat(a)+"\n"
@@ -35,4 +35,16 @@ function centered(q){
         result += spaces+stars+"\n"
     }
     return result
+}
+
+// Reversed Triangle
+
+function reversed(m){
+    let display= ""
+    for(let y=0;y<m;y++){
+        let space = " ".repeat(m-y)
+        let hashes = "#".repeat(y)
+        display += space+hashes+"\n"
+    }
+    return display
 }
