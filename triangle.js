@@ -15,7 +15,7 @@ function build(n){
     return answer
 }
 
-// Reversed Triangle
+// Inverted Triangle
 
 function reversed(z){
     let result = ""
