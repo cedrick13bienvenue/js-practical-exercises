@@ -22,3 +22,9 @@ function checkVowels(string){
     let result = [...string].filter((vowel)=>vowels.includes(vowel))
     return result.length
 }
+// OR
+
+function checkVowels(string){
+    let vowels = "aioueAIOUE"
+    return [...string].filter(vowel=>vowels.includes(vowel)).length
+}
