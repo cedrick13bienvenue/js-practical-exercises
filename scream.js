@@ -9,5 +9,3 @@ const scream  = function(x,y){
     }
     return result
 }
-
-console.log(scream("i",10))
