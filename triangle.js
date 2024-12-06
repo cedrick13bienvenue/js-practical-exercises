@@ -1,3 +1,4 @@
+
 // Right-Angled Triangle
 
 function makeLine(num){
