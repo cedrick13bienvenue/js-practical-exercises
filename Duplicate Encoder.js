@@ -26,3 +26,26 @@ function duplicateEncoder(word){
     }
     return result
 }
+
+// OR
+
+function duplicateEncoder(word){
+    let newWord = word.toLowerCase()
+    let frequency = {}
+    for(let char of newWord){
+        if(frequency[char]){
+            frequency[char]+=1
+        }else{
+            frequency[char]=1
+        }
+    }
+    let result = ""
+    for(let char of newWord){
+        if(frequency[char]>1){
+            result+=")"
+        }else{
+            result+="("
+        }
+    }
+    return result
+}
