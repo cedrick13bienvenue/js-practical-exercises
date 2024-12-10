@@ -20,5 +20,3 @@ const oddSquares = function(arr){
     return result
 
 }
-
-console.log(oddSquares([1, 2, 3, 4, 5, 6]))
