@@ -17,3 +17,10 @@ var uniqueInOrder=function(iterable){
     }
     return result
   }
+
+  // OR
+
+  function uniqueInOrder(iterable){
+    return [...iterable].filter((a,b)=>b===0||a!==iterable[b-1])
+  }
+  
