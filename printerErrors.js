@@ -16,7 +16,4 @@ s="aaaxbbbbyyhwawiwjjjwwm"
 printer_error(s) => "8/22"
  */}
 
- function printerError(s) {
-    // your code
-  
-}
+ 
