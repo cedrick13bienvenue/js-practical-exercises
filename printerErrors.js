@@ -26,3 +26,8 @@ function printerError(s) {
    }
   return `${count}/${s.length}`
 }
+
+function printerError(s){
+    const result = s.split("").filter(char=>char>"m").length
+    return `${result}/${s.length}`
+}
