@@ -18,6 +18,7 @@ console.log(transformedObject);
 // should return { FIRSTNAME: "John", LASTNAME: "Doe", AGE: 30 }
 ```
 */}
+
 function transformKeys(obj, transformFn) {
     const result = {}; 
     for (const [key, value] of Object.entries(obj)) {
