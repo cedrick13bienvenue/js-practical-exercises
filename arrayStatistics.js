@@ -28,6 +28,7 @@ const arrayStats = function(arr){
     }
 }
 console.log(arrayStats([1,2,3,4,5]))
+
  //OR
 
  const sumArr = function(arr){
