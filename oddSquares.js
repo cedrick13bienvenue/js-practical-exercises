@@ -1,5 +1,4 @@
 /* Odd Squares
-
 You are given an array of numbers. Your task is to implement a function called oddSquares that filters out the even numbers from the array and then maps the remaining numbers to their squares.
 
 Example:
