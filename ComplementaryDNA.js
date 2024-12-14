@@ -13,6 +13,7 @@ Example: (input --> output)
 "ATTGC" --> "TAACG"
 "GTAT" --> "CATA"*/}
 
+
 function dnaStrand(dna){
     let result=""
     for(let i=0;i<dna.length;i++){
@@ -28,3 +29,4 @@ function dnaStrand(dna){
     }
     return result
 }
+
