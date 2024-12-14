@@ -7,7 +7,6 @@ a = 1
 b = 4
 --> [1, 2, 3, 4] */}
 
-
 const between = function(a,b){
     let result=[]
     for(let i=a;i<=b;i++){
