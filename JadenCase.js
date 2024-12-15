@@ -13,6 +13,5 @@ String.prototype.JadenCase = function(){
     return this.split(" ").map( word=> word.charAt(0).toUpperCase() + word.slice(1))
 }
 
-let anyWord = "hello cedrick!"
-let result = anyWord.JadenCase()
-console.log(result)
+
+
