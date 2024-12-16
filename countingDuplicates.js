@@ -19,6 +19,7 @@ function countingDuplicates(str){
     for(let char of str){
         store[char] = (store[char] || 0)+1
     }
-
+    const duplicates = Object.values(store).filter(x=>x>1)
+    return duplicates.length
 }
 
