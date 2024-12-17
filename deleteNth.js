@@ -15,5 +15,13 @@ With list [20,37,20,21] and number 1, the result would be [20,37,21].*/}
 
 function deleteNth(arr,n){
     // ...
-    
+    let duplicates = {}
+    let result = []
+    for(let x of arr){
+        duplicates[x] = (duplicates[x]||0)+1
+        if(duplicates[x]<=n){
+            result.push(x)
+        }
+    }
+    return result
   }
