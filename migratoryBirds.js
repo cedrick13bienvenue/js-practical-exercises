@@ -59,4 +59,19 @@ Type :
 Type : 
 Two types have a frequency of , and the lower of those is type .*/}
 
-
+function migratoryBirds(arr) {
+    // Write your code here
+  let store = {}
+    for(let char of arr){
+        store[char] = (store[char]||0)+1
+    }
+    let result = null
+    let frequency = 0
+    for(let x in store){
+        if(store[x]>frequency){
+            frequency = store[x]
+            result = x
+        }
+    }
+    return Number(result)
+}
