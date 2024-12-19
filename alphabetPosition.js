@@ -16,3 +16,6 @@ function alphabetPosition(text) {
 
 // OR
 
+function alphabetPosition(text){
+    
+}
