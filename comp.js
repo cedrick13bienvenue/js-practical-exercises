@@ -29,3 +29,12 @@ If a or b are nil (or null or None, depending on the language), the problem does
 
 */}
 
+function comp(array1,array2){
+    if(!array1 || !array2 || array1.length !== array2.length){
+        return false
+    }
+    let arr = array1.map(a=>a*a)
+    let s1 = [...arr].sort()
+    let s2 = [...arr2].sort()
+    return s1.every((x,y)=>x === s2[y])
+}
