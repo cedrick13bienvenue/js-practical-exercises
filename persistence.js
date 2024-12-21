@@ -8,4 +8,14 @@ For example (Input --> Output):
 
 function persistence(num) {
     //code me
+    if(num<0)return false
+    let x = 0 
+    while(num>=10){
+        num = num
+        .toString()
+        .split("")
+        .reduce((a,b)=>a*b,1)
+        x++
+    }
+    return x
  }
