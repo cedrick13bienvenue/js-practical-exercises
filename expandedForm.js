@@ -10,4 +10,6 @@ If you liked this kata, check out part 2!!
 
  */}
 
- 
+ function expandedForm(){
+    
+ }
