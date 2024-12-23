@@ -9,6 +9,9 @@ NOTE: All numbers will be whole numbers greater than 0.
 If you liked this kata, check out part 2!!
 
  */}
- function expandedForm(){
-
+ function expandedForm(num){
+     let x = num.toString()
+     let l = x.length
+     return x.split("").map((a,b)=>a*Math.pow(10,l-b-1)).filter(z=>z>0).join(" + ")
  }
+ 
