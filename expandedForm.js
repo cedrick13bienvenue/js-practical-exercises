@@ -9,7 +9,6 @@ NOTE: All numbers will be whole numbers greater than 0.
 If you liked this kata, check out part 2!!
 
  */}
-
  function expandedForm(){
-    
+
  }
