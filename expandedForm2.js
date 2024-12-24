@@ -12,4 +12,6 @@ For example:
   7.304 --> "7 + 3/10 + 4/1000"
   0.04  --> "4/100" */}
 
-  
+  function expandedForm(num) {
+    // Your code here
+  }
