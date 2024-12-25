@@ -18,3 +18,4 @@ For example:
     let x = a.split("").map((s,r,arr)=>s*Math.pow(10,arr.length-r-1)).filter(q=>q>0).map(z=>z.toString())
     let y = b ? b.split("").map((f,g)=>`${f}/${Math.pow(10,g+1)}`).filter(h=>!h.startsWith("0")) : []
   }
+  
