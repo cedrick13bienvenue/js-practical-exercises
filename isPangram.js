@@ -5,4 +5,12 @@ Given a string, detect whether or not it is a pangram. Return True if it is, Fal
 
 function isPangram(string){
     //...
+    let strng = string.toLowerCase()
+    let result = new Set()
+    for(let char of strng){
+        if(char>="a" && char<="z"){
+            result.add(char)
+        }
+    }
+    return result.size === 26
   }
