@@ -72,4 +72,3 @@ function countApplesAndOranges(s, t, a, b, apples, oranges) {
     return [nApples.length,nOranges.length].join("\n")
 }
 console.log(countApplesAndOranges(7,10,4,12,[2,3,-4],[3,-2,-4]))
-
