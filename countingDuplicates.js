@@ -22,4 +22,3 @@ function countingDuplicates(str){
     const duplicates = Object.values(store).filter(x=>x>1)
     return duplicates.length
 }
-
