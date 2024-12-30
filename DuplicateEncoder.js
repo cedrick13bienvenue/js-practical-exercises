@@ -49,3 +49,4 @@ function duplicateEncoder(word){
     }
     return result
 }
+
