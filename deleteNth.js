@@ -25,3 +25,4 @@ function deleteNth(arr,n){
     }
     return result
   }
+  
