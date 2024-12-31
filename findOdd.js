@@ -11,5 +11,14 @@ Examples
 
 function findOdd(A) {
     //happy coding!
-    return 0;
+    let dup = {}
+    for(let x of A){
+        dup[x] = (dup[x]||0)+1
+    }
+    for(let key in dup){
+        if(dup[key]%2!==0){
+            return Number(key)
+        }
+    }
   }
+  
