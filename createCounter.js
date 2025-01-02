@@ -11,3 +11,11 @@ Use the new keyword to create instances of a constructor function and initialize
 Build a custom object using Object.create and set its prototype to a predefined object. Demonstrate how inheritance works in this scenario.
 */}
 
+function createCounter(){
+    let counter = 0
+    return function counterFn(){
+        counter++
+        return counter
+    }
+}
+const counter  = createCounter()
