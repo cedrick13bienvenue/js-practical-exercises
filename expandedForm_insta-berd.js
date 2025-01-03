@@ -52,6 +52,3 @@ const expandInUnits = (numbers, direction) => {
         return text
     }
 }
-
-
-console.log(deconstructDoubles("000.000"))
