@@ -10,3 +10,16 @@ If two words score the same, return the word that appears earliest in the origin
 
 All letters will be lowercase and all inputs will be valid. */}
 
+function high(x){
+    let words = x.split(" ")
+    let highWord = ""
+    let score = 0
+    words.forEach(word => {
+       let text = [...word].reduce((x,y)=>x+(y.charCodeAt(0)-96),0)
+       if(text>score){
+        score = text
+        highWord = word
+       }        
+    });
+    return highWord
+}
