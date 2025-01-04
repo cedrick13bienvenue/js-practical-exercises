@@ -7,5 +7,5 @@ The answer is always greater or equal to 0, no matter if it was in the past or i
 
 function twiceAsOld(dadYearsOld, sonYearsOld) {
     // your code here
-    
+    return Math.abs(2*sonYearsOld-dadYearsOld)
   }
