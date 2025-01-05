@@ -63,12 +63,18 @@ Only one fruit (the second apple) falls within the region between  and , so we p
 Only the second orange falls within the region between  and , so we print  as our second line of output. */}
 
 function countApplesAndOranges(s, t, a, b, apples, oranges) {
-    // Write your code here
-    let result = []
-    let m  = apples.map(x=>x+a)
-    let n = oranges.map(y=>y+b)
-    let nApples = m.filter(p=>p>=s && p<=t)
-    let nOranges = n.filter(q=>q>=s && q<=t)
-    return [nApples.length,nOranges.length].join("\n")
-}
-console.log(countApplesAndOranges(7,10,4,12,[2,3,-4],[3,-2,-4]))
+    // Calculate apples
+    const appleCount = apples.filter(x => {
+        const position = a + x;
+        return position >= s && position <= t;
+    }).length;
+    
+    // Calculate oranges
+    const orangeCount = oranges.filter(x => {
+        const position = b + x;
+        return position >= s && position <= t;
+    }).length;
+    
+    console.log(appleCount);
+    console.log(orangeCount);
+} 
