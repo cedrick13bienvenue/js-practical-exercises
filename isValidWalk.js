@@ -12,3 +12,4 @@ It will never give you an empty array (that's not a walk, that's standing still!
 function isValidWalk(walk) {
     //insert brilliant code here
   }
+  
