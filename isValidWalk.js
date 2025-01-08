@@ -10,6 +10,15 @@ Note: you will always receive a valid array containing a random assortment of di
 It will never give you an empty array (that's not a walk, that's standing still!). */}
 
 function isValidWalk(walk) {
-    //insert brilliant code here
+  if (walk.length !== 10) return false;
+  let x = 0, y = 0;
+  for (let direction of walk) {
+      if (direction === 'n') y++;
+      else if (direction === 's') y--;
+      else if (direction === 'e') x++;
+      else if (direction === 'w') x--;
   }
+  return x === 0 && y === 0;
+}
+
   
