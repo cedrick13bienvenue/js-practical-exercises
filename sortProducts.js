@@ -12,3 +12,4 @@ console.log(sortProducts([ { name: "Laptop", price: 1200 },
 { name: "Mouse", price: 25 },
 { name: "Keyboard", price: 45 },
 { name: "Monitor", price: 300 }]))
+
