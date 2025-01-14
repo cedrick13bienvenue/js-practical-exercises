@@ -11,5 +11,12 @@ longest(a, a) -> "abcdefghijklmnopqrstuvwxyz"*/}
 
 function longest(s1, s2) {
     // your code
-    
+    let sum = s1 + s2
+  let unique = []
+  for(let x of sum){
+    if(!unique.includes(x)){
+      unique.push(x)
+    }
+  }
+  return unique.sort().join("")
   }
