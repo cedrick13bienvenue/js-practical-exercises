@@ -20,3 +20,20 @@ function longest(s1, s2) {
   }
   return unique.sort().join("")
   }
+
+  // OR
+
+  function longest(s1, s2){
+    let unique = new Set([...s1,...s2])
+    return [...unique].sort().join("")
+  }
+
+  // OR
+
+  function longest(s1,s2){
+    let dup = {}
+    for(let x of s1+s2){
+      dup[x] = true
+    }
+    return Object.values(dup)
+  }
