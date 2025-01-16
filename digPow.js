@@ -29,7 +29,19 @@ n = 695; p = 2 ---> 2 since 6² + 9³ + 5⁴= 1390 = 695 * 2
 
 n = 46288; p = 3 ---> 51 since 4³ + 6⁴+ 2⁵ + 8⁶ + 8⁷ = 2360688 = 46288 * 51 */}
 
-function digPow(n, p){
-  // ...
-    
+function digPow(n, p) {
+  // Step 1: Convert the number to a string to get the digits
+  const digits = n.toString().split('').map(Number);
+
+  // Step 2: Calculate the sum of digits raised to consecutive powers
+  const sum = digits.reduce((total, digit, index) => {
+    return total + Math.pow(digit, p + index);
+  }, 0);
+
+  // Step 3: Check if the sum is divisible by n
+  if (sum % n === 0) {
+    return sum / n; // Return k if divisible
+  } else {
+    return -1; // Return -1 if not divisible
+  }
 }
