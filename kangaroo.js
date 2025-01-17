@@ -60,3 +60,20 @@ The second kangaroo has a starting location that is ahead (further to the right)
 Because the second kangaroo moves at a faster rate (meaning ) and is already ahead of the first kangaroo, 
 the first kangaroo will never be able to catch up. Thus, we print NO.*/}
 
+function kangaroo(x1, v1, x2, v2) {
+    if (v1 === v2) {
+        return x1 === x2 ? "YES" : "NO"; // Same speed, check starting position
+    }
+    
+    const n = (x2 - x1) / (v1 - v2);
+    
+    if (n >= 0 && Number.isInteger(n)) {
+        return "YES";
+    }
+    
+    return "NO";
+}
+
+// Sample Inputs and Outputs
+console.log(kangaroo(0, 3, 4, 2)); // Output: "YES"
+console.log(kangaroo(0, 2, 5, 3)); // Output: "NO"
