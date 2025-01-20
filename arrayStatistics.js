@@ -56,3 +56,4 @@ console.log(arrayStats([1,2,3,4,5]))
     }
 }
 console.log(sumArr([1,2,3,4,5]))
+
