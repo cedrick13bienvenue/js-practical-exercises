@@ -14,3 +14,5 @@ function isPangram(string){
     }
     return result.size === 26
   }
+
+  
