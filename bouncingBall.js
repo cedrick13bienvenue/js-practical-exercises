@@ -22,3 +22,6 @@ Examples:
 
 (Condition 2) not fulfilled). */}
 
+function bouncingBall(h,  bounce,  window) {
+    // your code here
+  }
