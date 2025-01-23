@@ -24,5 +24,15 @@ Examples:
 
 function bouncingBall(h,  bounce,  window) {
     // your code here
+    if( h <= 0 || bounce <= 0 || bounce >= 1 || window >= h) {
+      return -1
+    }
+   let x = 1
+   let y = h*bounce
+   while(y>window){
+     x+=2
+     y*=bounce
+   }
+   return x
   }
   
