@@ -1,4 +1,5 @@
-{/*Object key transformation
+{/*
+Object key transformation
 
 Your task is to implement a JavaScript function called transformKeys that takes an object as input and returns a new object with the keys transformed according to the provided transformation function.
 
@@ -17,7 +18,8 @@ const transformedObject = transformKeys(inputObject, transformFunction);
 console.log(transformedObject);
 // should return { FIRSTNAME: "John", LASTNAME: "Doe", AGE: 30 }
 ```
-*/}
+*/
+}
 
 function transformKeys(obj, transformFn) {
     const result = {}; 
@@ -27,4 +29,3 @@ function transformKeys(obj, transformFn) {
     }
     return result; 
 }
-
