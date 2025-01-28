@@ -8,5 +8,4 @@ For example, when an array is passed like [19, 5, 42, 2, 77], the output should 
 
 function sumTwoSmallestNumbers(numbers) {  
     //Code here
-    
   }
