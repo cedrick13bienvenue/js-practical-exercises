@@ -17,5 +17,4 @@ const oddSquares = function(arr){
         result[j] = result[j] * result[j]
     }
     return result
-
 }
