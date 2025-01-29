@@ -38,3 +38,4 @@ function comp(array1,array2){
     let s2 = [...arr2].sort()
     return s1.every((x,y)=>x === s2[y])
 }
+
