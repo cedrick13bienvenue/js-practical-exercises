@@ -31,3 +31,4 @@ function printerError(s){
     const result = s.split("").filter(char=>char>"m").length
     return `${result}/${s.length}`
 }
+
