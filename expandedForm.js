@@ -14,4 +14,3 @@ If you liked this kata, check out part 2!!
      let l = x.length
      return x.split("").map((a,b)=>a*Math.pow(10,l-b-1)).filter(z=>z>0).join(" + ")
  }
- 
