@@ -30,3 +30,6 @@ function dnaStrand(dna){
     }
     return result
 }
+
+
+
