@@ -75,3 +75,5 @@ function migratoryBirds(arr) {
     }
     return Number(result)
 }
+
+
