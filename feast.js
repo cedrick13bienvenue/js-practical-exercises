@@ -13,9 +13,12 @@ beast and dish may contain hyphens and spaces, but these will not appear at the 
       const y = beast[0]
       const a = dish[dish.length-1]
       const b = beast[beast.length-1]
+
       if(x===y && a===b){
         return true
-      }else{
+
+      }else
+      {
         return false
       }
     }
