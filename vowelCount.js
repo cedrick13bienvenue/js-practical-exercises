@@ -5,6 +5,7 @@ We will consider a, e, i, o, u as vowels for this Kata (but not y).
 The input string will only consist of lower case letters and/or spaces.*/}
 
 function checkVowels(string){
+
     let vowels = "aioueAIOUE"
     let count = 0
     for(let vowel of string){
@@ -18,6 +19,7 @@ function checkVowels(string){
 // OR
 
 function checkVowels(string){
+    
     let vowels = "aioueAIOUE"
     let result = [...string].filter((vowel)=>vowels.includes(vowel))
     return result.length
