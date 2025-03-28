@@ -11,7 +11,8 @@ There must be a function for each of the following mathematical operations: plus
 Each calculation consist of exactly one operation and two numbers
 The most outer function represents the left operand, the most inner function represents the right operand
 Division should be integer division. For example, this should return 2, not 2.666666...:
-eight(dividedBy(three())); */
+eight(dividedBy(three())); 
+*/
 
 function zero(op) { return op ? op(0) : 0; }
 function one(op) { return op ? op(1) : 1; }
@@ -29,7 +30,8 @@ function minus(b) { return a => a - b; }
 function times(b) { return a => a * b; }
 function dividedBy(b) { return a => Math.floor(a / b); }
 
-// Example usage:
+// Several example usage:
+
 console.log(seven(times(five()))); // 35
 console.log(four(plus(nine())));  // 13
 console.log(eight(minus(three()))); // 5
