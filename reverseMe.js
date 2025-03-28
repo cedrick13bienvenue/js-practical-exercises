@@ -1,4 +1,3 @@
-
 // Write a function which returns a reversed string
 
 String.prototype.reverseMe = function(){
@@ -27,12 +26,15 @@ Examples
 function reverseWords(str){
     let result = ""
     let word = ""
+
     for(let i=0;i<str.length;i++){
         let x = str[i]
+
         if(x === " "){
             result += reverseWord(word)+ " "
             word = ""
         }else{
+
             word += x
         }
     }
@@ -47,4 +49,3 @@ function reverseWord(word){
     }
     return reversed
 }
-
