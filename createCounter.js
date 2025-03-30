@@ -12,8 +12,11 @@ Build a custom object using Object.create and set its prototype to a predefined 
 */}
 
 function createCounter(){
+
     let counter = 0
+
     return function counterFn(){
+        
         counter++
         return counter
     }
