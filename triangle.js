@@ -37,10 +37,13 @@ function centered(q){
     return result
 }
 
+
 // Reversed Triangle
 
 function reversed(m){
+    
     let display= ""
+
     for(let y=0;y<m;y++){
         let space = " ".repeat(m-y)
         let hashes = "#".repeat(y)
