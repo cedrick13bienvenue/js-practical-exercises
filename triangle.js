@@ -1,8 +1,10 @@
 // Right-Angled Triangle
 
 function makeLine(num){
+    
     var line = ""
     for(var j=1;j<=num;j++){
+
         line+="*"
     }
     return line+"\n"
@@ -41,7 +43,7 @@ function centered(q){
 // Reversed Triangle
 
 function reversed(m){
-    
+
     let display= ""
 
     for(let y=0;y<m;y++){
