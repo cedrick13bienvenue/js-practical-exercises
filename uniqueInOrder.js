@@ -9,9 +9,12 @@ uniqueInOrder('ABBCcAD')         == ['A', 'B', 'C', 'c', 'A', 'D']
 uniqueInOrder([1,2,2,3,3])       == [1,2,3]*/}
 
 var uniqueInOrder=function(iterable){
+
     let result = []
+
     for(let i=0;i<iterable.length;i++){
       if(i===0||iterable[i]!==iterable[i-1]){
+        
         result.push(iterable[i])
       }
     }
