@@ -53,7 +53,9 @@ function getTotalX(a, b) {
 
     // Function to find GCD of two numbers
     function gcd(x, y) {
+
         while (y !== 0) {
+            
             let temp = y;
             y = x % y;
             x = temp;
