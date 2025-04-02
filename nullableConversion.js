@@ -4,13 +4,16 @@
 // If a property is null convert it to zero and if a property is undefined convert it to an empty string. Return the modified object.
 
 const convertNullableValues = function(object){
+
     for(let key in object){
+        
         if(object[key]===null){
             object[key]=0
         }else if(object[key]===undefined){
             object[key]="";
         }
     }
+    
     return object
 }
 
