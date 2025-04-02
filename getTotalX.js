@@ -71,10 +71,15 @@ function getTotalX(a, b) {
 
     // Count numbers between LCM(A) and GCD(B)
     let count = 0;
+
     for (let i = lcmA; i <= gcdB; i += lcmA) {
+
         if (gcdB % i === 0) {
+
             count++;
+        
         }
+    
     }
 
     return count;
