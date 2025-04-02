@@ -10,11 +10,16 @@ function solution(string) {
     let result = ""
     
     for(let x of string){
+
       if(x===x.toUpperCase()&&x!==x.toLowerCase()){
         result+=" "+x
-      }else{
+      
+      }
+      else{
+        
         result+=x
       }
+      
     }
     return result;
   }
