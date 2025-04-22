@@ -25,3 +25,14 @@ function alphabetPosition(text){
     }
     return result.join(" ")
 }
+
+// OR
+
+function alphabetPosition(text) {
+    return text
+      .toLowerCase()
+      .match(/[a-z]/g) // match only lowercase letters
+      ?.map(char => char.charCodeAt(0) - 96)
+      .join(" ") || ""; // return empty string if no letters
+  }
+  
