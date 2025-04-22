@@ -32,3 +32,25 @@ function transformKeys(obj, transformFn) {
     }
     return result; 
 }
+
+ // OR
+
+ function transformKeys(obj, transformFn) {
+  return Object.fromEntries(
+    Object.entries(obj).map(([key, value]) => [transformFn(key), value])
+  );
+}
+
+
+// Example usage 
+
+const inputObject = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 30,
+};
+
+const transformFunction = (key) => key.toUpperCase();
+
+console.log(transformKeys(inputObject, transformFunction));
+// Output: { FIRSTNAME: "John", LASTNAME: "Doe", AGE: 30 }
