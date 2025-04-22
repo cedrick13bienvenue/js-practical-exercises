@@ -79,3 +79,27 @@ console.log(kangaroo(0, 3, 4, 2)); // Output: "YES"
 console.log(kangaroo(0, 2, 5, 3)); // Output: "NO"
 
 
+// OR 
+
+function kangaroo(x1, v1, x2, v2) {
+    // If one kangaroo is ahead and also jumps faster, they’ll never meet
+    if ((x1 < x2 && v1 <= v2) || (x1 > x2 && v1 >= v2)) {
+      return "NO";
+    }
+  
+    while (x1 !== x2) {
+      x1 += v1;
+      x2 += v2;
+  
+      // If they never meet (one passes the other), break early
+      if ((v1 > v2 && x1 > x2) || (v2 > v1 && x2 > x1)) {
+        return "NO";
+      }
+    }
+  
+    return "YES";
+  }
+
+  console.log(kangaroo(0, 3, 4, 2)); // YES
+  console.log(kangaroo(0, 2, 5, 3)); // NO
+  
