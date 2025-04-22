@@ -35,4 +35,23 @@ function bouncingBall(h,  bounce,  window) {
    }
    return x
   }
+
+  // OR 
+
+  function bouncingBall(h, bounce, window) {
+    // Check if the conditions are valid
+    if (h <= 0 || bounce <= 0 || bounce >= 1 || window >= h) {
+      return -1;
+    }
+  
+    let seenCount = 1; // First fall is always seen
+    let bounceHeight = h * bounce;
+  
+    while (bounceHeight > window) {
+      seenCount += 2; // One up and one down past the window
+      bounceHeight *= bounce;
+    }
+  
+    return seenCount;
+  }
   
