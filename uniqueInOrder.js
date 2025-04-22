@@ -26,3 +26,23 @@ var uniqueInOrder=function(iterable){
   function uniqueInOrder(iterable){
     return [...iterable].filter((a,b)=>b===0||a!==iterable[b-1])
   }
+
+  // OR
+  
+  function uniqueInOrder(iterable) {
+    let result = [];
+    let prev = undefined;
+  
+    for (let item of iterable) {
+      if (item !== prev) {
+        result.push(item);
+        prev = item;
+      }
+    }
+  
+    return result;
+  }
+
+console.log(uniqueInOrder('AAAABBBCCDAABBB')); // ['A', 'B', 'C', 'D', 'A', 'B']
+console.log(uniqueInOrder('ABBCcAD'));         // ['A', 'B', 'C', 'c', 'A', 'D']
+console.log(uniqueInOrder([1, 2, 2, 3, 3]));    // [1, 2, 3]
