@@ -78,3 +78,24 @@ function countApplesAndOranges(s, t, a, b, apples, oranges) {
     console.log(appleCount);
     console.log(orangeCount);
 } 
+
+// OR 
+
+function countApplesAndOranges(s, t, a, b, apples, oranges) {
+    // Count how many apples fall on the house
+    let applesOnHouse = apples.filter(apple => {
+      let landingPosition = a + apple; // where the apple lands
+      return landingPosition >= s && landingPosition <= t;
+    }).length;
+  
+    // Count how many oranges fall on the house
+    let orangesOnHouse = oranges.filter(orange => {
+      let landingPosition = b + orange; // where the orange lands
+      return landingPosition >= s && landingPosition <= t;
+    }).length;
+  
+    // Print the results
+    console.log(applesOnHouse);
+    console.log(orangesOnHouse);
+  }
+  
