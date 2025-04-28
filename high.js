@@ -24,4 +24,13 @@ function high(x){
     return highWord
 }
 
+// OR
 
+function high(x) {
+    return x.split(' ').reduce((highest, word) => {
+      const score = [...word].reduce((sum, char) => sum + char.charCodeAt(0) - 96, 0);
+      const highScore = [...highest].reduce((sum, char) => sum + char.charCodeAt(0) - 96, 0);
+      return score > highScore ? word : highest;
+    });
+  }
+  
