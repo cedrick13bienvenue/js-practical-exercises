@@ -77,3 +77,26 @@ function migratoryBirds(arr) {
 }
 
 
+// OR 
+
+function migratoryBirds(arr) {
+    let store = {};
+    for (let char of arr) {
+        store[char] = (store[char] || 0) + 1;
+    }
+
+    let result = null;
+    let frequency = 0;
+
+    for (let x in store) {
+        let birdId = Number(x);
+        if (store[x] > frequency) {
+            frequency = store[x];
+            result = birdId;
+        } else if (store[x] === frequency && birdId < result) {
+            result = birdId;
+        }
+    }
+
+    return result;
+}
