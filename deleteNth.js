@@ -25,3 +25,58 @@ function deleteNth(arr,n){
     }
     return result
   }
+
+  // OR
+  
+  function deleteNth(arr, n) {
+    let counts = {};
+  
+    return arr.reduce((result, num) => {
+      counts[num] = (counts[num] || 0) + 1;
+      if (counts[num] <= n) {
+        result.push(num);
+      }
+      return result;
+    }, []);
+  }
+
+  // OR
+
+  function deleteNth(arr, n) {
+    let counts = new Map();
+    let result = [];
+  
+    for (let num of arr) {
+      counts.set(num, (counts.get(num) || 0) + 1);
+      if (counts.get(num) <= n) {
+        result.push(num);
+      }
+    }
+  
+    return result;
+  }
+
+  // OR 
+
+  function deleteNth(arr, n) {
+    const counts = {};
+    return arr.filter(num => (counts[num] = (counts[num] || 0) + 1) <= n);
+  }
+
+  // OR 
+
+  function deleteNth(arr, n) {
+    let counts = {};
+    let result = [];
+  
+    for (let i = 0; i < arr.length; i++) {
+      let num = arr[i];
+      counts[num] = (counts[num] || 0) + 1;
+      if (counts[num] <= n) {
+        result.push(num);
+      }
+    }
+  
+    return result;
+  }
+  
