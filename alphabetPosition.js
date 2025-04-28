@@ -36,3 +36,19 @@ function alphabetPosition(text) {
       .join(" ") || ""; // return empty string if no letters
   }
   
+  // OR 
+
+  function alphabetPosition(text) {
+    let result = "";
+    text = text.toLowerCase();
+  
+    for (let i = 0; i < text.length; i++) {
+      let code = text.charCodeAt(i);
+      if (code >= 97 && code <= 122) { // if it's a letter a-z
+        result += (code - 96) + " ";
+      }
+    }
+  
+    return result.trim(); // remove the last space
+  }
+  
