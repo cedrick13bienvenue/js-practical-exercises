@@ -45,3 +45,26 @@ function digPow(n, p) {
     return -1; // Return -1 if not divisible
   }
 }
+
+// OR
+
+function digPow(n, p) {
+  const sum = [...String(n)].reduce((acc, d, i) => acc + d ** (p + i), 0);
+  return sum % n ? -1 : sum / n;
+}
+
+// OR
+
+function digPow(n, p) {
+  let sum = 0;
+  let digits = n.toString().split('');
+
+  for (let i = 0; i < digits.length; i++) {
+    sum += Math.pow(Number(digits[i]), p + i);
+  }
+
+  if (sum % n === 0) {
+    return sum / n;
+  }
+  return -1;
+}
