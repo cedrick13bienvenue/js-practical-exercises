@@ -61,3 +61,12 @@ function accum(s) {
     })
     .join("-");
 }
+
+// OR
+
+function accum(s) {
+  return s.split("").reduce((acc, char, i) => {
+    let part = char.toUpperCase() + char.toLowerCase().repeat(i);
+    return acc + (acc ? "-" : "") + part;
+  }, "");
+}
