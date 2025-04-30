@@ -56,3 +56,11 @@ function uniqueInOrder(iterable) {
     return acc;
   }, []);
 }
+
+// OR
+
+function uniqueInOrder(iterable, index = 0, prev = null, result = []) {
+  if (index >= iterable.length) return result;
+  if (iterable[index] !== prev) result.push(iterable[index]);
+  return uniqueInOrder(iterable, index + 1, iterable[index], result);
+}
