@@ -70,3 +70,17 @@ function accum(s) {
     return acc + (acc ? "-" : "") + part;
   }, "");
 }
+
+// OR
+
+function accum(s) {
+  let parts = [];
+
+  for (let i = 0; i < s.length; i++) {
+    let char = s[i];
+    let transformed = char.toUpperCase() + char.toLowerCase().repeat(i);
+    parts.push(transformed);
+  }
+
+  return parts.join("-");
+}
