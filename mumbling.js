@@ -51,3 +51,13 @@ function accum(s) {
 
   return result.join("-");
 }
+
+// OR
+function accum(s) {
+  return s
+    .split("") // Split the string into an array of letters
+    .map((char, index) => {
+      return char.toUpperCase() + char.toLowerCase().repeat(index);
+    })
+    .join("-");
+}
