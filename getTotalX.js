@@ -46,44 +46,62 @@ Explanation
 4, 8 and 16 are the only three numbers for which each element of a is a factor and each is a factor of all elements of b. */
 
 function getTotalX(a, b) {
-    // Function to find LCM of two numbers
-    function lcm(x, y) {
-        return (x * y) / gcd(x, y);
+  // Function to find LCM of two numbers
+  function lcm(x, y) {
+    return (x * y) / gcd(x, y);
+  }
+
+  // Function to find GCD of two numbers
+  function gcd(x, y) {
+    while (y !== 0) {
+      let temp = y;
+      y = x % y;
+      x = temp;
     }
+    return x;
+  }
 
-    // Function to find GCD of two numbers
-    function gcd(x, y) {
+  // Find LCM of array A
+  let lcmA = a.reduce((acc, num) => lcm(acc, num), a[0]);
 
-        while (y !== 0) {
-            
-            let temp = y;
-            y = x % y;
-            x = temp;
-        }
-        return x;
+  // Find GCD of array B
+  let gcdB = b.reduce((acc, num) => gcd(acc, num), b[0]);
+
+  // Count numbers between LCM(A) and GCD(B)
+  let count = 0;
+
+  for (let i = lcmA; i <= gcdB; i += lcmA) {
+    if (gcdB % i === 0) {
+      count++;
     }
+  }
 
-    // Find LCM of array A
-    let lcmA = a.reduce((acc, num) => lcm(acc, num), a[0]);
-
-    // Find GCD of array B
-    let gcdB = b.reduce((acc, num) => gcd(acc, num), b[0]);
-
-    // Count numbers between LCM(A) and GCD(B)
-    let count = 0;
-
-    for (let i = lcmA; i <= gcdB; i += lcmA) {
-
-        if (gcdB % i === 0) {
-
-            count++;
-        
-        }
-    
-    }
-
-    return count;
+  return count;
 }
 
 // Example usage:
+console.log(getTotalX([2, 4], [16, 32, 96])); // Output: 3
+
+// OR
+
+function getTotalX(a, b) {
+  function isFactorOfAll(n, arr) {
+    return arr.every((x) => x % n === 0);
+  }
+
+  function isMultipleOfAll(n, arr) {
+    return arr.every((x) => n % x === 0);
+  }
+
+  let count = 0;
+
+  for (let i = Math.max(...a); i <= Math.min(...b); i++) {
+    if (isMultipleOfAll(i, a) && isFactorOfAll(i, b)) {
+      count++;
+    }
+  }
+
+  return count;
+}
+
 console.log(getTotalX([2, 4], [16, 32, 96])); // Output: 3
