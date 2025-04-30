@@ -64,3 +64,11 @@ function uniqueInOrder(iterable, index = 0, prev = null, result = []) {
   if (iterable[index] !== prev) result.push(iterable[index]);
   return uniqueInOrder(iterable, index + 1, iterable[index], result);
 }
+
+// OR
+
+function uniqueInOrder(str) {
+  return typeof str === "string"
+    ? str.match(/(.)\1*/g).map((s) => s[0])
+    : str.filter((val, i) => i === 0 || val !== str[i - 1]);
+}
