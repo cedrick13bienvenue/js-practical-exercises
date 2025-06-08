@@ -11,6 +11,13 @@ Note you should only return a number, the count of divisors. The numbers between
 
  */
 
-function getDivisorsCnt(n){
+
     // todo
+function getDivisorsCnt(n) {
+  let count = 0;
+  for (let i = 1; i <= n; i++) {
+    if (n % i === 0) count++;
+  }
+  return count;
 }
+
