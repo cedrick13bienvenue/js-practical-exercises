@@ -52,3 +52,11 @@ function solution(string) {
   }
   return result;
 }
+
+// Using reduce()
+
+function solution(string) {
+  return string.split('').reduce((acc, char) => {
+    return acc + (char === char.toUpperCase() && char !== char.toLowerCase() ? ' ' + char : char);
+  }, '');
+}
