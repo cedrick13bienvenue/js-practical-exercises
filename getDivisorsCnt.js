@@ -34,3 +34,8 @@ function getDivisorsCnt(n) {
   }
   return count;
 }
+
+
+// One-liner Using Array + Filter 
+
+const getDivisorsCnt = n => [...Array(n).keys()].filter(i => n % (i + 1) === 0).length;
