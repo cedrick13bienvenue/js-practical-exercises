@@ -63,3 +63,28 @@ const comp = (a, b) =>
   !!a && !!b &&
   a.length === b.length &&
   a.map(x => x ** 2).sort((m, n) => m - n).every((x, i) => x === b.sort((m, n) => m - n)[i]);
+
+
+// Using Map Object 
+
+function comp(a, b) {
+  if (!a || !b || a.length !== b.length) return false;
+
+  const freqMap = (arr) => {
+    const map = new Map();
+    for (let val of arr) {
+      map.set(val, (map.get(val) || 0) + 1);
+    }
+    return map;
+  };
+
+  const aSquared = a.map(x => x * x);
+  const mapA = freqMap(aSquared);
+  const mapB = freqMap(b);
+
+  for (let [key, val] of mapA.entries()) {
+    if (mapB.get(key) !== val) return false;
+  }
+
+  return true;
+}
