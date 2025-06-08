@@ -38,3 +38,21 @@ function comp(array1,array2){
     let s2 = [...arr2].sort()
     return s1.every((x,y)=>x === s2[y])
 } 
+
+// Using Frequency Maps
+
+function comp(a, b) {
+  if (!a || !b || a.length !== b.length) return false;
+
+  const count = (arr) =>
+    arr.reduce((map, val) => {
+      map[val] = (map[val] || 0) + 1;
+      return map;
+    }, {});
+
+  const aSquares = a.map(x => x * x);
+  const mapA = count(aSquares);
+  const mapB = count(b);
+
+  return Object.keys(mapA).every(key => mapA[key] === mapB[key]);
+}
