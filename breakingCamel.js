@@ -23,3 +23,9 @@ function solution(string) {
     }
     return result;
   }
+
+  // Using regular expressions
+
+  function solution(string) {
+  return string.replace(/([A-Z])/g, ' $1');
+}
