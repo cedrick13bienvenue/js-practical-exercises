@@ -44,3 +44,18 @@ function expandedForm(num) {
   }
   return parts.join(" + ");
 }
+
+// OR 
+
+function expandedForm(num) {
+  const strNum = num.toString();
+  const length = strNum.length;
+
+  return [...strNum]
+    .reduce((acc, digit, index) => {
+      const val = digit * Math.pow(10, length - index - 1);
+      if (val > 0) acc.push(val);
+      return acc;
+    }, [])
+    .join(" + ");
+}
