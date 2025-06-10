@@ -16,3 +16,14 @@ If you liked this kata, check out part 2!!
      .map((a,b)=>a*Math.pow(10,l-b-1))
      .filter(z=>z>0).join(" + ")
  }
+
+ // OR 
+
+ function expandedForm(num) {
+  const strNum = num.toString();
+  const length = strNum.length;
+  return Array.from(strNum)
+    .map((digit, index) => digit * Math.pow(10, length - index - 1))
+    .filter(val => val > 0)
+    .join(" + ");
+}
