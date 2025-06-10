@@ -51,3 +51,10 @@ function dnaStrand(dna) {
     }
   });
 }
+
+// OR
+
+function dnaStrand(dna) {
+  const complements = { A: "T", T: "A", C: "G", G: "C" };
+  return [...dna].reduce((result, base) => result + complements[base], "");
+}
