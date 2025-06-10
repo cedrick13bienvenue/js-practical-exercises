@@ -27,3 +27,20 @@ If you liked this kata, check out part 2!!
     .filter(val => val > 0)
     .join(" + ");
 }
+
+
+// OR 
+
+function expandedForm(num) {
+  const strNum = num.toString();
+  const length = strNum.length;
+  let parts = [];
+
+  for (let i = 0; i < length; i++) {
+    const val = strNum[i] * Math.pow(10, length - i - 1);
+    if (val > 0) {
+      parts.push(val);
+    }
+  }
+  return parts.join(" + ");
+}
