@@ -38,3 +38,16 @@ function dnaStrand(dna) {
   const complements = { A: "T", T: "A", C: "G", G: "C" };
   return [...dna].map(base => complements[base]).join("");
 }
+
+// OR 
+
+function dnaStrand(dna) {
+  return dna.replace(/./g, base => {
+    switch (base) {
+      case "A": return "T";
+      case "T": return "A";
+      case "C": return "G";
+      case "G": return "C";
+    }
+  });
+}
