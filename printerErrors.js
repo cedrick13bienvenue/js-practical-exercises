@@ -50,3 +50,12 @@ function printerError(s) {
   }
   return `${errors}/${s.length}`;
 }
+
+// OR
+
+function printerError(s) {
+  const errors = s
+    .split("")
+    .reduce((acc, char) => (char > "m" ? acc + 1 : acc), 0);
+  return `${errors}/${s.length}`;
+}
