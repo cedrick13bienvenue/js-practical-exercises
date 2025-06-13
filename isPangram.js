@@ -31,3 +31,17 @@ function isPangram(string) {
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
   return [...alphabet].every((letter) => lowerStr.includes(letter));
 }
+
+// OR
+function isPangram(string) {
+  const freq = {};
+  const lowerStr = string.toLowerCase();
+
+  for (let char of lowerStr) {
+    if (char >= "a" && char <= "z") {
+      freq[char] = true;
+    }
+  }
+
+  return Object.keys(freq).length === 26;
+}
