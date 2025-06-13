@@ -23,3 +23,11 @@ function isPangram(string) {
   const letters = new Set(string.toLowerCase().match(/[a-z]/g));
   return letters.size === 26;
 }
+
+// OR
+
+function isPangram(string) {
+  const lowerStr = string.toLowerCase();
+  const alphabet = "abcdefghijklmnopqrstuvwxyz";
+  return [...alphabet].every((letter) => lowerStr.includes(letter));
+}
