@@ -41,3 +41,12 @@ function printerError(s) {
   const count = errors ? errors.length : 0;
   return `${count}/${s.length}`;
 }
+
+// OR
+function printerError(s) {
+  let errors = 0;
+  for (const char of s) {
+    if (char > "m") errors++;
+  }
+  return `${errors}/${s.length}`;
+}
