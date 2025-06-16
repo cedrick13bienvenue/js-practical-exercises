@@ -38,3 +38,11 @@ String.prototype.JadenCase = function () {
     return i === 0 ? capWord : acc + " " + capWord;
   }, "");
 };
+
+// OR
+
+String.prototype.JadenCase = function () {
+  return Array.from(this.split(" "))
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+};
