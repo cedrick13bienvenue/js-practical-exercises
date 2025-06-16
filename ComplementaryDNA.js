@@ -86,3 +86,14 @@ function dnaStrand(dna) {
   const complements = { A: "T", T: "A", C: "G", G: "C" };
   return dna.replace(/[ATCG]/g, (base) => complements[base]);
 }
+
+// OR
+
+function dnaStrand(dna) {
+  return [...dna].reduce(
+    (acc, base) =>
+      acc +
+      (base === "A" ? "T" : base === "T" ? "A" : base === "C" ? "G" : "C"),
+    ""
+  );
+}
