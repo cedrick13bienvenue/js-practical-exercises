@@ -74,3 +74,8 @@ function dnaStrand(dna) {
   }
   return result;
 }
+
+// OR
+
+const dnaStrand = (dna) =>
+  [...dna].map((base) => ({ A: "T", T: "A", C: "G", G: "C" }[base])).join("");
