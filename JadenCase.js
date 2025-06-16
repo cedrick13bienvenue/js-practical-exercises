@@ -15,3 +15,11 @@ String.prototype.JadenCase = function () {
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
 };
+
+// OR
+
+String.prototype.JadenCase = function () {
+  return this.split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+};
