@@ -79,3 +79,10 @@ function dnaStrand(dna) {
 
 const dnaStrand = (dna) =>
   [...dna].map((base) => ({ A: "T", T: "A", C: "G", G: "C" }[base])).join("");
+
+// OR
+
+function dnaStrand(dna) {
+  const complements = { A: "T", T: "A", C: "G", G: "C" };
+  return dna.replace(/[ATCG]/g, (base) => complements[base]);
+}
