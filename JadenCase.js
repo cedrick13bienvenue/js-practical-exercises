@@ -29,3 +29,12 @@ String.prototype.JadenCase = function () {
 String.prototype.JadenCase = function () {
   return this.replace(/\b\w/g, (char) => char.toUpperCase());
 };
+
+// OR
+
+String.prototype.JadenCase = function () {
+  return this.split(" ").reduce((acc, word, i) => {
+    const capWord = word.charAt(0).toUpperCase() + word.slice(1);
+    return i === 0 ? capWord : acc + " " + capWord;
+  }, "");
+};
