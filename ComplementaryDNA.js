@@ -1,5 +1,5 @@
-
-{/*Deoxyribonucleic acid (DNA) is a chemical found in the nucleus of cells and carries the "instructions" for the development and functioning of living organisms.
+{
+  /*Deoxyribonucleic acid (DNA) is a chemical found in the nucleus of cells and carries the "instructions" for the development and functioning of living organisms.
 
 If you want to know more: http://en.wikipedia.org/wiki/DNA
 
@@ -12,42 +12,45 @@ More similar exercise are found here: http://rosalind.info/problems/list-view/ (
 Example: (input --> output)
 
 "ATTGC" --> "TAACG"
-"GTAT" --> "CATA"*/}
-
-
-function dnaStrand(dna){
-    let result=""
-    for(let i=0;i<dna.length;i++){
-        if(dna[i]==="A"){
-            result+="T"
-        }else if(dna[i]==="T"){
-           result+="A"
-        }else if(dna[i]==="C"){
-            result+="G"
-        }else if(dna[i]==="G"){
-            result+="C"
-        }
-    }
-    return result
+"GTAT" --> "CATA"*/
 }
 
+function dnaStrand(dna) {
+  let result = "";
+  for (let i = 0; i < dna.length; i++) {
+    if (dna[i] === "A") {
+      result += "T";
+    } else if (dna[i] === "T") {
+      result += "A";
+    } else if (dna[i] === "C") {
+      result += "G";
+    } else if (dna[i] === "G") {
+      result += "C";
+    }
+  }
+  return result;
+}
 
 // OR
 
 function dnaStrand(dna) {
   const complements = { A: "T", T: "A", C: "G", G: "C" };
-  return [...dna].map(base => complements[base]).join("");
+  return [...dna].map((base) => complements[base]).join("");
 }
 
-// OR 
+// OR
 
 function dnaStrand(dna) {
-  return dna.replace(/./g, base => {
+  return dna.replace(/./g, (base) => {
     switch (base) {
-      case "A": return "T";
-      case "T": return "A";
-      case "C": return "G";
-      case "G": return "C";
+      case "A":
+        return "T";
+      case "T":
+        return "A";
+      case "C":
+        return "G";
+      case "G":
+        return "C";
     }
   });
 }
@@ -57,4 +60,17 @@ function dnaStrand(dna) {
 function dnaStrand(dna) {
   const complements = { A: "T", T: "A", C: "G", G: "C" };
   return [...dna].reduce((result, base) => result + complements[base], "");
+}
+
+// OR
+
+function dnaStrand(dna) {
+  let result = "";
+  for (const base of dna) {
+    if (base === "A") result += "T";
+    else if (base === "T") result += "A";
+    else if (base === "C") result += "G";
+    else if (base === "G") result += "C";
+  }
+  return result;
 }
