@@ -28,4 +28,8 @@ function getBiggestNumberInArrays(numbers1, numbers2) {
   return max1 > max2 ? max1 : max2;
 }
 
-export { getBiggestNumberInArrays };
+// OR
+
+function getBiggestNumberInArrays(numbers1, numbers2) {
+  return Math.max(...numbers1, ...numbers2);
+}
