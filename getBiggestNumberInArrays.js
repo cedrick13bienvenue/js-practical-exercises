@@ -19,3 +19,13 @@ function getBiggestNumberInArrays(numbers1, numbers2) {
   }
   return max;
 }
+
+// OR
+
+function getBiggestNumberInArrays(numbers1, numbers2) {
+  const max1 = numbers1.reduce((a, b) => (a > b ? a : b), -Infinity);
+  const max2 = numbers2.reduce((a, b) => (a > b ? a : b), -Infinity);
+  return max1 > max2 ? max1 : max2;
+}
+
+export { getBiggestNumberInArrays };
