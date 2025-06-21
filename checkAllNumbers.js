@@ -4,3 +4,13 @@
 function areAllNumbersEven(numbers) {
   return numbers.every((num) => num % 2 === 0);
 }
+
+// OR
+
+function areAllNumbersEven(numbers) {
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 !== 0) {
+      return false; // As soon as one number is odd, return false
+    }
+  }
+}
