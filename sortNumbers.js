@@ -4,3 +4,13 @@ function solution(nums) {
   }
   return nums.sort((a, b) => a - b);
 }
+
+// OR
+
+function solution(nums) {
+  return nums !== null
+    ? nums.sort(function (a, b) {
+        return a - b;
+      })
+    : [];
+}
