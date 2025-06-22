@@ -15,3 +15,17 @@ function disemvowel(str) {
     .filter((char) => !vowels.includes(char.toLowerCase())) // remove vowels
     .join(""); // rejoin into string
 }
+
+// OR
+
+function disemvowel(str) {
+  let answer = "";
+  const vowels = ["a", "e", "i", "o", "u"];
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i];
+    if (!vowels.includes(char.toLowerCase())) {
+      answer += str[i];
+    }
+  }
+  return answer;
+}
