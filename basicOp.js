@@ -31,3 +31,14 @@ function basicOp(operation, value1, value2) {
 function basicOp(o, a, b) {
   return eval(a + o + b);
 }
+
+// OR
+
+const basicOperations = {
+  "+": (a, b) => a + b,
+  "-": (a, b) => a - b,
+  "*": (a, b) => a * b,
+  "/": (a, b) => a / b,
+};
+
+const basicOp = (op, x, y) => basicOperations[op](x, y);
