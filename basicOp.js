@@ -25,3 +25,9 @@ function basicOp(operation, value1, value2) {
       return 0;
   }
 }
+
+// OR
+
+function basicOp(o, a, b) {
+  return eval(a + o + b);
+}
