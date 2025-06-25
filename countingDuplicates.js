@@ -36,3 +36,17 @@ function countingDuplicates(str) {
   }
   return count;
 }
+
+// OR
+
+function countingDuplicates(str) {
+  const freq = str
+    .toLowerCase()
+    .split("")
+    .reduce((acc, char) => {
+      acc[char] = (acc[char] || 0) + 1;
+      return acc;
+    }, {});
+
+  return Object.values(freq).filter((x) => x > 1).length;
+}
