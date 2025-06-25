@@ -78,3 +78,17 @@ function bouncingBall(h, bounce, window, seen = 1) {
     ? bouncingBall(nextHeight, bounce, window, seen + 2)
     : seen;
 }
+// OR
+
+function bouncingBall(h, bounce, window) {
+  if (!(h > 0 && 0 < bounce && bounce < 1 && window < h)) return -1;
+
+  let count = 1;
+  let height = h * bounce;
+
+  while (height > window && (count += 2)) {
+    height *= bounce;
+  }
+
+  return count;
+}
