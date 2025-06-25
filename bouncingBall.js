@@ -1,4 +1,5 @@
-{/*A child is playing with a ball on the nth floor of a tall building. The height of this floor above ground level, h, is known.
+{
+  /*A child is playing with a ball on the nth floor of a tall building. The height of this floor above ground level, h, is known.
 
 He drops the ball out of the window. The ball bounces (for example), to two-thirds of its height (a bounce of 0.66).
 
@@ -20,50 +21,60 @@ Examples:
 
 - h = 3, bounce = 1, window = 1.5, result is -1 
 
-(Condition 2) not fulfilled). */}
+(Condition 2) not fulfilled). */
+}
 
-function bouncingBall(h,  bounce,  window) {
-    // your code here
-    if( h <= 0 || bounce <= 0 || bounce >= 1 || window >= h) {
-      return -1
-    }
-   let x = 1
-   let y = h*bounce
-   while(y>window){
-     x+=2
-     y*=bounce
-   }
-   return x
+function bouncingBall(h, bounce, window) {
+  // your code here
+  if (h <= 0 || bounce <= 0 || bounce >= 1 || window >= h) {
+    return -1;
+  }
+  let x = 1;
+  let y = h * bounce;
+  while (y > window) {
+    x += 2;
+    y *= bounce;
+  }
+  return x;
+}
+
+// OR
+
+function bouncingBall(h, bounce, window) {
+  // Check if the conditions are valid
+  if (h <= 0 || bounce <= 0 || bounce >= 1 || window >= h) {
+    return -1;
   }
 
-  // OR 
+  let seenCount = 1; // First fall is always seen
+  let bounceHeight = h * bounce;
 
-  function bouncingBall(h, bounce, window) {
-    // Check if the conditions are valid
-    if (h <= 0 || bounce <= 0 || bounce >= 1 || window >= h) {
-      return -1;
-    }
-  
-    let seenCount = 1; // First fall is always seen
-    let bounceHeight = h * bounce;
-  
-    while (bounceHeight > window) {
-      seenCount += 2; // One up and one down past the window
-      bounceHeight *= bounce;
-    }
-  
-    return seenCount;
+  while (bounceHeight > window) {
+    seenCount += 2; // One up and one down past the window
+    bounceHeight *= bounce;
   }
-  
-  // OR 
-  function bouncingBall(h, bounce, window) {
-    if (h <= 0 || bounce <= 0 || bounce >= 1 || window >= h) return -1;
-  
-    let seenCount = 1;
-    for (let height = h * bounce; height > window; height *= bounce) {
-      seenCount += 2;
-    }
-    
-    return seenCount;
+
+  return seenCount;
+}
+
+// OR
+function bouncingBall(h, bounce, window) {
+  if (h <= 0 || bounce <= 0 || bounce >= 1 || window >= h) return -1;
+
+  let seenCount = 1;
+  for (let height = h * bounce; height > window; height *= bounce) {
+    seenCount += 2;
   }
-  
+
+  return seenCount;
+}
+
+// OR
+
+function bouncingBall(h, bounce, window, seen = 1) {
+  if (h <= 0 || bounce <= 0 || bounce >= 1 || window >= h) return -1;
+  const nextHeight = h * bounce;
+  return nextHeight > window
+    ? bouncingBall(nextHeight, bounce, window, seen + 2)
+    : seen;
+}
