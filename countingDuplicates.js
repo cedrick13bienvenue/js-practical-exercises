@@ -22,3 +22,17 @@ function countingDuplicates(str) {
   const duplicates = Object.values(store).filter((x) => x > 1);
   return duplicates.length;
 }
+
+// OR
+
+function countingDuplicates(str) {
+  const freq = new Map();
+  for (let char of str.toLowerCase()) {
+    freq.set(char, (freq.get(char) || 0) + 1);
+  }
+  let count = 0;
+  for (let val of freq.values()) {
+    if (val > 1) count++;
+  }
+  return count;
+}
