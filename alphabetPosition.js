@@ -85,3 +85,15 @@ function alphabetPosition(text) {
   }
   return result.join(" ");
 }
+
+// OR
+
+function alphabetPosition(text) {
+  return (
+    text
+      .toLowerCase()
+      .match(/[a-z]/g)
+      ?.map((char) => char.charCodeAt(0) - 96)
+      .join(" ") || ""
+  );
+}
