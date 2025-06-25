@@ -97,3 +97,19 @@ function alphabetPosition(text) {
       .join(" ") || ""
   );
 }
+
+// OR
+
+function alphabetPosition(text) {
+  let result = "";
+  text = text.toLowerCase();
+
+  for (let i = 0; i < text.length; i++) {
+    let code = text.charCodeAt(i);
+    if (code >= 97 && code <= 122) {
+      result += code - 96 + " ";
+    }
+  }
+
+  return result.trim();
+}
