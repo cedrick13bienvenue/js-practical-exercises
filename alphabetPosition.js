@@ -72,3 +72,16 @@ function alphabetPosition(text) {
     .map((char) => char.charCodeAt(0) - 96)
     .join(" ");
 }
+
+// OR
+
+function alphabetPosition(text) {
+  let result = [];
+  for (let i = 0; i < text.length; i++) {
+    let char = text[i].toLowerCase();
+    if (char >= "a" && char <= "z") {
+      result.push(char.charCodeAt(0) - 96);
+    }
+  }
+  return result.join(" ");
+}
