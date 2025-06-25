@@ -92,3 +92,25 @@ function bouncingBall(h, bounce, window) {
 
   return count;
 }
+
+// OR
+
+function bouncingBall(h, bounce, window) {
+  let validHeight = h > 0;
+  let validBounce = bounce > 0 && bounce < 1;
+  let validWindow = window < h;
+
+  if (!validHeight || !validBounce || !validWindow) {
+    return -1;
+  }
+
+  let count = 1;
+  let currentHeight = h * bounce;
+
+  while (currentHeight > window) {
+    count += 2;
+    currentHeight *= bounce;
+  }
+
+  return count;
+}
