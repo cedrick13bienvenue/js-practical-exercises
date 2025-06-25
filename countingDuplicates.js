@@ -50,3 +50,21 @@ function countingDuplicates(str) {
 
   return Object.values(freq).filter((x) => x > 1).length;
 }
+
+// OR
+
+function countingDuplicates(str) {
+  str = str.toLowerCase();
+  const seen = new Set();
+  const duplicates = new Set();
+
+  for (let char of str) {
+    if (seen.has(char)) {
+      duplicates.add(char);
+    } else {
+      seen.add(char);
+    }
+  }
+
+  return duplicates.size;
+}
