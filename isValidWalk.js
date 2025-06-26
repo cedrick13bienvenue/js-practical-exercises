@@ -67,3 +67,16 @@ function isValidWalk(walk) {
 
   return x === 0 && y === 0;
 }
+
+// OR
+
+function isValidWalk(walk) {
+  if (walk.length !== 10) return false;
+
+  const count = { n: 0, s: 0, e: 0, w: 0 };
+  for (let dir of walk) {
+    count[dir]++;
+  }
+
+  return count["n"] === count["s"] && count["e"] === count["w"];
+}
