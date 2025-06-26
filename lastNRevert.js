@@ -23,3 +23,8 @@ function lastNRevert(text, n) {
   const lastNChars = text.slice(-n);
   return lastNChars.split("").reverse().join("");
 }
+
+// OR
+
+const lastNRevert = (text, n) =>
+  n > 0 && n <= text.length ? [...text.slice(-n)].reverse().join("") : "";
