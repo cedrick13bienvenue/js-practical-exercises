@@ -40,3 +40,11 @@ function lastNRevert(text, n) {
   }
   return result;
 }
+
+// OR
+
+function lastNRevert(text, n) {
+  return n > 0 && n <= text.length
+    ? text.slice(-n).split("").reverse().join("")
+    : "";
+}
