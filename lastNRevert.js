@@ -28,3 +28,15 @@ function lastNRevert(text, n) {
 
 const lastNRevert = (text, n) =>
   n > 0 && n <= text.length ? [...text.slice(-n)].reverse().join("") : "";
+
+// OR
+
+function lastNRevert(text, n) {
+  if (n <= 0 || n > text.length) return "";
+
+  let result = "";
+  for (let i = text.length - 1; i >= text.length - n; i--) {
+    result += text[i];
+  }
+  return result;
+}
