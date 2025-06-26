@@ -34,3 +34,14 @@ function convertNullableValues(obj) {
   });
   return obj;
 }
+
+// OR
+
+function convertNullableValues(obj) {
+  return Object.fromEntries(
+    Object.entries(obj).map(([key, value]) => [
+      key,
+      value === null ? 0 : value === undefined ? "" : value,
+    ])
+  );
+}
