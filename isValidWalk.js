@@ -49,3 +49,21 @@ function isValidWalk(walk) {
   }
   return x === 0 && y === 0;
 }
+
+// OR
+
+function isValidWalk(walk) {
+  if (walk.length !== 10) return false;
+
+  const [x, y] = walk.reduce(
+    ([x, y], dir) => {
+      if (dir === "n") return [x, y + 1];
+      if (dir === "s") return [x, y - 1];
+      if (dir === "e") return [x + 1, y];
+      if (dir === "w") return [x - 1, y];
+    },
+    [0, 0]
+  );
+
+  return x === 0 && y === 0;
+}
