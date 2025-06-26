@@ -45,3 +45,13 @@ function convertNullableValues(obj) {
     ])
   );
 }
+
+// OR
+
+function convertNullableValues(obj) {
+  for (let key of Object.keys(obj)) {
+    if (obj[key] === null) obj[key] = 0;
+    else if (obj[key] === undefined) obj[key] = "";
+  }
+  return obj;
+}
