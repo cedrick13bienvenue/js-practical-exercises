@@ -55,3 +55,13 @@ function countPositivesSumNegatives(input) {
 
   return [positives, negatives];
 }
+
+// OR
+
+const countPositivesSumNegatives = (input) =>
+  !input || input.length === 0
+    ? []
+    : [
+        input.filter((n) => n > 0).length,
+        input.filter((n) => n < 0).reduce((a, b) => a + b, 0),
+      ];
