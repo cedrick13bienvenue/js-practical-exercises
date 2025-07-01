@@ -121,3 +121,16 @@ const plus = (b) => (a) => a + b;
 const minus = (b) => (a) => a - b;
 const times = (b) => (a) => a * b;
 const dividedBy = (b) => (a) => Math.floor(a / b);
+
+// OR
+
+const createNumFns = () =>
+  Array.from({ length: 10 }, (_, i) => (op) => op ? op(i) : i);
+
+const [zero, one, two, three, four, five, six, seven, eight, nine] =
+  createNumFns();
+
+const plus = (b) => (a) => a + b;
+const minus = (b) => (a) => a - b;
+const times = (b) => (a) => a * b;
+const dividedBy = (b) => (a) => Math.floor(a / b);
