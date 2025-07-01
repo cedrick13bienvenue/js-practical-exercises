@@ -6,15 +6,18 @@ oddSquares([1, 2, 3, 4, 5, 6]); // should return [1, 9, 25]
 oddSquares([10, 15, 20, 25, 30]); // should return [225, 625]
  */
 
-const oddSquares = function(arr){
-    let result = [];
-    for(let i=0; i<arr.length;i++){
-        if(arr[i] % 2!==0){
-            result.push(arr[i])
-        }
+const oddSquares = function (arr) {
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 !== 0) {
+      result.push(arr[i]);
     }
-    for(let j=0; j<result.length;j++){
-        result[j] = result[j] * result[j]
-    }
-    return result
-}
+  }
+  for (let j = 0; j < result.length; j++) {
+    result[j] = result[j] * result[j];
+  }
+  return result;
+};
+
+// OR
+const x = (arr) => arr.filter((n) => n % 2 !== 0).map((n) => n * n);
