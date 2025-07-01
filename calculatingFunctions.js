@@ -97,3 +97,27 @@ const plus = (b) => (a) => a + b;
 const minus = (b) => (a) => a - b;
 const times = (b) => (a) => a * b;
 const dividedBy = (b) => (a) => Math.floor(a / b);
+
+// OR
+
+function makeNumber(n) {
+  return function (op) {
+    return op ? op(n) : n;
+  };
+}
+
+const zero = makeNumber(0);
+const one = makeNumber(1);
+const two = makeNumber(2);
+const three = makeNumber(3);
+const four = makeNumber(4);
+const five = makeNumber(5);
+const six = makeNumber(6);
+const seven = makeNumber(7);
+const eight = makeNumber(8);
+const nine = makeNumber(9);
+
+const plus = (b) => (a) => a + b;
+const minus = (b) => (a) => a - b;
+const times = (b) => (a) => a * b;
+const dividedBy = (b) => (a) => Math.floor(a / b);
