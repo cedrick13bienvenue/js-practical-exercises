@@ -21,3 +21,11 @@ const oddSquares = function (arr) {
 
 // OR
 const x = (arr) => arr.filter((n) => n % 2 !== 0).map((n) => n * n);
+
+// OR
+
+const y = (arr) =>
+  arr.reduce((acc, n) => {
+    if (n % 2 !== 0) acc.push(n * n);
+    return acc;
+  }, []);
