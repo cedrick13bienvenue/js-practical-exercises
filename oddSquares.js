@@ -29,3 +29,13 @@ const y = (arr) =>
     if (n % 2 !== 0) acc.push(n * n);
     return acc;
   }, []);
+
+// OR
+
+const result = (arr) => {
+  const result = [];
+  for (const n of arr) {
+    if (n % 2 !== 0) result.push(n * n);
+  }
+  return result;
+};
