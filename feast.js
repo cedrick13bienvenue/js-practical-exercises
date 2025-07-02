@@ -38,3 +38,11 @@ function feast(beast, dish) {
   const [dFirst, dLast] = [dish[0], dish[dish.length - 1]];
   return bFirst === dFirst && bLast === dLast;
 }
+
+// OR
+
+function feast(beast, dish) {
+  return (
+    beast.charAt(0) === dish.charAt(0) && beast.slice(-1) === dish.slice(-1)
+  );
+}
