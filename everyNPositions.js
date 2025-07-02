@@ -35,3 +35,15 @@ function everyNPositions(message, step) {
   }
   return result;
 }
+
+// OR
+
+function everyNPositions(message, step, i = 0, result = "") {
+  if (i >= message.length) return result;
+  return everyNPositions(
+    message,
+    step,
+    i + 1,
+    i % step === 0 ? result + message[i] : result
+  );
+}
