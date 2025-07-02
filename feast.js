@@ -46,3 +46,9 @@ function feast(beast, dish) {
     beast.charAt(0) === dish.charAt(0) && beast.slice(-1) === dish.slice(-1)
   );
 }
+
+// OR
+
+function feast(beast, dish) {
+  return beast[0] === dish[0] && beast.at(-1) === dish.at(-1) ? true : false;
+}
