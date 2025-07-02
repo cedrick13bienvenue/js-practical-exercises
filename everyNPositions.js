@@ -16,3 +16,12 @@ function everyNPositions(message, step) {
   }
   return answer;
 }
+
+// OR
+
+function everyNPositions(message, step) {
+  return message
+    .split("")
+    .filter((_, i) => i % step === 0)
+    .join("");
+}
