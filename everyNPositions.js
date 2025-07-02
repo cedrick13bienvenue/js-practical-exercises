@@ -25,3 +25,13 @@ function everyNPositions(message, step) {
     .filter((_, i) => i % step === 0)
     .join("");
 }
+
+// OR
+
+function everyNPositions(message, step) {
+  let result = "";
+  for (let [i, char] of [...message].entries()) {
+    if (i % step === 0) result += char;
+  }
+  return result;
+}
