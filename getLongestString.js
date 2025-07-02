@@ -47,3 +47,8 @@ function getLongestString(arr) {
   }
   return longest;
 }
+
+// OR
+function getLongestString(arr) {
+  return arr.sort((a, b) => b.length - a.length)[0] || "";
+}
