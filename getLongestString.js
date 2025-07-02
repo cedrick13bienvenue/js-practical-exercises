@@ -26,3 +26,12 @@ console.log(getLongestString(["cat", "zebra", "lion"])); // "zebra"
 console.log(getLongestString(["hi", "hello", "hey"])); // "hello"
 console.log(getLongestString(["same", "size", "word"])); // "same"
 console.log(getLongestString([])); // ""
+
+// OR
+
+function getLongestString(arr) {
+  return arr.reduce(
+    (longest, current) => (current.length > longest.length ? current : longest),
+    ""
+  );
+}
