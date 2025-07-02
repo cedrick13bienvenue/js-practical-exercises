@@ -123,3 +123,14 @@ function migratoryBirds(arr) {
 
   return result;
 }
+
+// OR
+
+function migratoryBirds(arr) {
+  const counts = {};
+  arr.forEach((id) => (counts[id] = (counts[id] || 0) + 1));
+
+  return Object.keys(counts).reduce((a, b) =>
+    counts[a] > counts[b] ? a : counts[a] < counts[b] ? b : Math.min(a, b)
+  );
+}
