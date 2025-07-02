@@ -35,3 +35,15 @@ function getLongestString(arr) {
     ""
   );
 }
+
+// OR
+
+function getLongestString(arr) {
+  let longest = "";
+  for (const str of arr) {
+    if (str.length > longest.length) {
+      longest = str;
+    }
+  }
+  return longest;
+}
