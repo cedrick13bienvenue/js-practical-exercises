@@ -34,3 +34,12 @@ function arrayDiff(a, b) {
   const bSet = new Set(b);
   return a.filter((x) => !bSet.has(x));
 }
+
+// OR
+
+function arrayDiff(a, b) {
+  return a.reduce((acc, val) => {
+    if (!b.includes(val)) acc.push(val);
+    return acc;
+  }, []);
+}
