@@ -27,3 +27,19 @@ function sumTwoSmallestNumbers(numbers) {
   const secondMin = Math.min(...numbers);
   return firstMin + secondMin;
 }
+
+// OR
+
+function sumTwoSmallestNumbers(numbers) {
+  let min1 = Infinity,
+    min2 = Infinity;
+  for (let num of numbers) {
+    if (num < min1) {
+      min2 = min1;
+      min1 = num;
+    } else if (num < min2) {
+      min2 = num;
+    }
+  }
+  return min1 + min2;
+}
