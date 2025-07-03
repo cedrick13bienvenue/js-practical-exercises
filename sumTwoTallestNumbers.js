@@ -18,3 +18,12 @@ function sumTwoSmallestNumbers(numbers) {
   const [a, b] = numbers.sort((x, y) => x - y);
   return a + b;
 }
+
+// OR
+
+function sumTwoSmallestNumbers(numbers) {
+  const firstMin = Math.min(...numbers);
+  numbers.splice(numbers.indexOf(firstMin), 1);
+  const secondMin = Math.min(...numbers);
+  return firstMin + secondMin;
+}
