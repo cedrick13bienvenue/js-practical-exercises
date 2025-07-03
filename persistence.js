@@ -35,3 +35,14 @@ function persistence(num, count = 0) {
     .reduce((a, b) => a * b, 1);
   return persistence(product, count + 1);
 }
+
+// OR
+
+function persistence(num) {
+  let count = 0;
+  while (num >= 10) {
+    num = [...`${num}`].reduce((a, b) => a * b, 1);
+    count++;
+  }
+  return count;
+}
