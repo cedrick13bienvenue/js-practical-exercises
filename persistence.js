@@ -46,3 +46,13 @@ function persistence(num) {
   }
   return count;
 }
+
+// OR
+
+function persistence(num) {
+  let count = 0;
+  for (; num > 9; count++) {
+    num = [...`${num}`].reduce((a, b) => a * b);
+  }
+  return count;
+}
