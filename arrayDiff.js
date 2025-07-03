@@ -43,3 +43,13 @@ function arrayDiff(a, b) {
     return acc;
   }, []);
 }
+
+// OR
+
+function arrayDiff(a, b) {
+  const result = [];
+  for (const val of a) {
+    if (!b.includes(val)) result.push(val);
+  }
+  return result;
+}
