@@ -61,3 +61,18 @@ function likes(names) {
     ? `${names[0]}, ${names[1]} and ${names[2]} like this`
     : `${names[0]}, ${names[1]} and ${names.length - 2} others like this`;
 }
+
+// OR
+
+function likes(names) {
+  const templates = {
+    0: "no one likes this",
+    1: `${names[0]} likes this`,
+    2: `${names[0]} and ${names[1]} like this`,
+    3: `${names[0]}, ${names[1]} and ${names[2]} like this`,
+  };
+  return (
+    templates[names.length] ||
+    `${names[0]}, ${names[1]} and ${names.length - 2} others like this`
+  );
+}
