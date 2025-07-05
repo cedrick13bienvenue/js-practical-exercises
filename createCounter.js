@@ -25,3 +25,20 @@ const counter = createCounter();
 console.log(counter()); // 1
 console.log(counter()); // 2
 console.log(counter()); // 3
+
+// OR
+
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+Person.prototype.greet = function () {
+  return `Hello, my name is ${this.name} and I'm ${this.age} years old.`;
+};
+
+const alice = new Person("Alice", 22);
+const bob = new Person("Bob", 30);
+
+console.log(alice.greet()); // "Hello, my name is Alice and I'm 22 years old."
+console.log(bob.greet()); // "Hello, my name is Bob and I'm 30 years old."
