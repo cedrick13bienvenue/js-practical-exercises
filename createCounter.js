@@ -42,3 +42,17 @@ const bob = new Person("Bob", 30);
 
 console.log(alice.greet()); // "Hello, my name is Alice and I'm 22 years old."
 console.log(bob.greet()); // "Hello, my name is Bob and I'm 30 years old."
+
+// OR
+
+const animal = {
+  sound: "generic sound",
+  speak: function () {
+    return `I make a ${this.sound}`;
+  },
+};
+
+const dog = Object.create(animal);
+dog.sound = "bark";
+
+console.log(dog.speak()); // "I make a bark"
