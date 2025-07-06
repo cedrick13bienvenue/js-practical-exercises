@@ -7,45 +7,45 @@ Example
 */
 
 function solution(string) {
-    let result = ""
-    
-    for(let x of string){
+  let result = "";
 
-      if(x===x.toUpperCase()&&x!==x.toLowerCase()){
-        result+=" "+x
-      
-      }
-      else{
-        
-        result+=x
-      }
-      
+  for (let x of string) {
+    if (x === x.toUpperCase() && x !== x.toLowerCase()) {
+      result += " " + x;
+    } else {
+      result += x;
     }
-    return result;
   }
-
-  // Using regular expressions
-
-  function solution(string) {
-  return string.replace(/([A-Z])/g, ' $1');
+  return result;
 }
 
-// Using split() and map() 
+// Using regular expressions
 
 function solution(string) {
-  return string.split('').map(char => {
-    return char === char.toUpperCase() && char !== char.toLowerCase() ? ' ' + char : char;
-  }).join('');
+  return string.replace(/([A-Z])/g, " $1");
+}
+
+// Using split() and map()
+
+function solution(string) {
+  return string
+    .split("")
+    .map((char) => {
+      return char === char.toUpperCase() && char !== char.toLowerCase()
+        ? " " + char
+        : char;
+    })
+    .join("");
 }
 
 // Using a for Loop with Index
 
 function solution(string) {
-  let result = '';
+  let result = "";
   for (let i = 0; i < string.length; i++) {
     const char = string[i];
     if (char === char.toUpperCase() && char !== char.toLowerCase()) {
-      result += ' ' + char;
+      result += " " + char;
     } else {
       result += char;
     }
@@ -56,7 +56,26 @@ function solution(string) {
 // Using reduce()
 
 function solution(string) {
-  return string.split('').reduce((acc, char) => {
-    return acc + (char === char.toUpperCase() && char !== char.toLowerCase() ? ' ' + char : char);
-  }, '');
+  return string.split("").reduce((acc, char) => {
+    return (
+      acc +
+      (char === char.toUpperCase() && char !== char.toLowerCase()
+        ? " " + char
+        : char)
+    );
+  }, "");
+}
+
+// OR
+
+function solution(string) {
+  let result = "";
+  for (let x of string) {
+    if (x === x.toUpperCase() && x !== x.toLowerCase()) {
+      result += " " + x;
+    } else {
+      result += x;
+    }
+  }
+  return result;
 }
