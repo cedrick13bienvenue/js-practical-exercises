@@ -81,3 +81,16 @@ function merge(left, right) {
   }
   return [...sorted, ...left, ...right];
 }
+
+// OR
+
+function quickSort(arr) {
+  if (arr.length <= 1) return arr;
+
+  const pivot = arr[arr.length - 1];
+  const left = arr.filter((el) => el < pivot);
+  const right = arr.filter((el) => el > pivot);
+  const equals = arr.filter((el) => el === pivot);
+
+  return [...quickSort(left), ...equals, ...quickSort(right)];
+}
