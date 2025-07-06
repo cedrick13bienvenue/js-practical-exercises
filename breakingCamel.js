@@ -85,3 +85,16 @@ function solution(string) {
 function solution(string) {
   return string.replace(/([A-Z])/g, " $1");
 }
+
+// OR
+
+function solution(string) {
+  return string
+    .split("")
+    .map((char) => {
+      return char === char.toUpperCase() && char !== char.toLowerCase()
+        ? " " + char
+        : char;
+    })
+    .join("");
+}
