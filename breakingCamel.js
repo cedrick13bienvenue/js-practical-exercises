@@ -98,3 +98,17 @@ function solution(string) {
     })
     .join("");
 }
+
+// OR
+
+function solution(string) {
+  let result = "";
+  for (let i = 0; i < string.length; i++) {
+    const char = string[i];
+    result +=
+      char === char.toUpperCase() && char !== char.toLowerCase()
+        ? " " + char
+        : char;
+  }
+  return result;
+}
