@@ -125,3 +125,11 @@ function solution(string) {
     );
   }, "");
 }
+
+// OR
+
+function solution(string) {
+  return Array.from(string)
+    .map((c) => (c === c.toUpperCase() && c !== c.toLowerCase() ? " " + c : c))
+    .join("");
+}
