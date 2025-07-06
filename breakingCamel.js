@@ -133,3 +133,13 @@ function solution(string) {
     .map((c) => (c === c.toUpperCase() && c !== c.toLowerCase() ? " " + c : c))
     .join("");
 }
+
+// OR
+
+function solution(string, i = 0) {
+  if (i >= string.length) return "";
+  const char = string[i];
+  const space =
+    char === char.toUpperCase() && char !== char.toLowerCase() ? " " : "";
+  return space + char + solution(string, i + 1);
+}
