@@ -132,3 +132,17 @@ class Mediator {
     this.channels[channel].forEach((fn) => fn(data));
   }
 }
+
+// 10. Chain of Responsibility
+// Description: Passes requests along a chain until handled.
+
+class Handler {
+  setNext(handler) {
+    this.next = handler;
+    return handler;
+  }
+  handle(request) {
+    if (this.next) return this.next.handle(request);
+    return null;
+  }
+}
