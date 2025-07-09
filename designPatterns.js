@@ -53,3 +53,15 @@ const CounterModule = (function () {
     getCount: () => count,
   };
 })();
+
+// 5. Prototype Pattern
+// Description: Allows the creation of objects based on a template (prototype).
+
+const animal = {
+  speak: function () {
+    console.log(`${this.name} makes a noise.`);
+  },
+};
+
+const dog = Object.create(animal);
+dog.name = "Rex";
