@@ -115,3 +115,20 @@ function DecoratedUser(user, role) {
   };
   return user;
 }
+
+// 9. Mediator Pattern
+// Description: Reduces coupling between components by centralizing communication.
+
+class Mediator {
+  constructor() {
+    this.channels = {};
+  }
+  subscribe(channel, fn) {
+    if (!this.channels[channel]) this.channels[channel] = [];
+    this.channels[channel].push(fn);
+  }
+  publish(channel, data) {
+    if (!this.channels[channel]) return;
+    this.channels[channel].forEach((fn) => fn(data));
+  }
+}
