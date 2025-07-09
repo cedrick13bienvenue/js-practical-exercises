@@ -81,3 +81,19 @@ function Command(execute) {
 const light = new Light();
 const lightOn = new Command(light.on);
 lightOn.execute();
+
+//7. Strategy Pattern
+// Description: Enables selecting an algorithm at runtime
+
+function add(a, b) {
+  return a + b;
+}
+function multiply(a, b) {
+  return a * b;
+}
+
+function Calculator(strategy) {
+  this.calculate = strategy;
+}
+const calc = new Calculator(add);
+console.log(calc.calculate(2, 3));
