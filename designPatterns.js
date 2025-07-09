@@ -65,3 +65,19 @@ const animal = {
 
 const dog = Object.create(animal);
 dog.name = "Rex";
+
+// 6. Command Pattern
+// Description: Encapsulates a request as an object, allowing parameterization.
+
+function Light() {
+  this.on = () => console.log("Light ON");
+  this.off = () => console.log("Light OFF");
+}
+
+function Command(execute) {
+  this.execute = execute;
+}
+
+const light = new Light();
+const lightOn = new Command(light.on);
+lightOn.execute();
