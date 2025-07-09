@@ -42,3 +42,14 @@ class Subject {
     this.observers.forEach((fn) => fn(data));
   }
 }
+
+//4. Module Pattern
+// Description: Encapsulates code using closures to create private/public members.
+
+const CounterModule = (function () {
+  let count = 0;
+  return {
+    increment: () => ++count,
+    getCount: () => count,
+  };
+})();
