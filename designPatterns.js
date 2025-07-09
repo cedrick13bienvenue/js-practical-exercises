@@ -82,7 +82,7 @@ const light = new Light();
 const lightOn = new Command(light.on);
 lightOn.execute();
 
-//7. Strategy Pattern
+// 7. Strategy Pattern
 // Description: Enables selecting an algorithm at runtime
 
 function add(a, b) {
@@ -97,3 +97,21 @@ function Calculator(strategy) {
 }
 const calc = new Calculator(add);
 console.log(calc.calculate(2, 3));
+
+// 8. Decorator Pattern
+// Description: Adds behavior to an object dynamically.
+
+function User(name) {
+  this.name = name;
+  this.say = () => console.log(`User: ${this.name}`);
+}
+
+function DecoratedUser(user, role) {
+  user.role = role;
+  const oldSay = user.say;
+  user.say = () => {
+    oldSay.call(user);
+    console.log(`Role: ${user.role}`);
+  };
+  return user;
+}
