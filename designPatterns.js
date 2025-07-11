@@ -269,3 +269,14 @@ class Meal {
     console.log("Serving meal");
   }
 }
+
+// 18. Null Object Pattern
+// Description: Uses a non-functional object in place of a null reference.
+
+const NullLogger = {
+  log: () => {}, // no operation
+};
+
+function process(data, logger = NullLogger) {
+  logger.log(data);
+}
