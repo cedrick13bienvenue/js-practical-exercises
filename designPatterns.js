@@ -253,3 +253,19 @@ class Editor {
     this.content = content;
   }
 }
+
+// 17. Template Pattern
+// Description: Defines a base algorithm with customizable steps.
+
+class Meal {
+  prepare() {
+    this.getIngredients();
+    this.cook();
+    this.serve();
+  }
+  getIngredients() {}
+  cook() {}
+  serve() {
+    console.log("Serving meal");
+  }
+}
