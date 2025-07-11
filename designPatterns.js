@@ -280,3 +280,18 @@ const NullLogger = {
 function process(data, logger = NullLogger) {
   logger.log(data);
 }
+
+// 19. Data Access Object (DAO) Pattern
+// Description: Provides an abstract interface to some type of database or other persistence mechanism.
+
+class UserDAO {
+  constructor() {
+    this.users = [];
+  }
+  add(user) {
+    this.users.push(user);
+  }
+  getAll() {
+    return this.users;
+  }
+}
