@@ -235,3 +235,21 @@ class TrafficLight {
     console.log(`State: ${this.state}`);
   }
 }
+
+// 16. Memento Pattern
+// Description: Captures and restores an object's internal state.
+
+class Editor {
+  constructor() {
+    this.content = "";
+  }
+  write(text) {
+    this.content += text;
+  }
+  save() {
+    return this.content;
+  }
+  restore(content) {
+    this.content = content;
+  }
+}
