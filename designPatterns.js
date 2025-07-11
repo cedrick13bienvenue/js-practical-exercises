@@ -180,3 +180,17 @@ class PrinterAdapter {
     this.oldPrinter.printOld(text);
   }
 }
+
+// 13. Proxy Pattern
+// Description: Provides a surrogate or placeholder to control access to another object.
+
+const server = {
+  fetchData: () => "Fetched data from server",
+};
+
+const proxy = {
+  fetchData: () => {
+    console.log("Checking cache...");
+    return server.fetchData();
+  },
+};
