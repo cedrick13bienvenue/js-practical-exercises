@@ -194,3 +194,26 @@ const proxy = {
     return server.fetchData();
   },
 };
+
+// 14. Flyweight Pattern
+// Description: Minimizes memory usage by sharing data between similar objects.
+
+class Car {
+  constructor(make, model) {
+    this.make = make;
+    this.model = model;
+  }
+}
+
+const carFactory = (() => {
+  const cars = {};
+  return {
+    getCar(make, model) {
+      const key = `${make}_${model}`;
+      if (!cars[key]) {
+        cars[key] = new Car(make, model);
+      }
+      return cars[key];
+    },
+  };
+})();
