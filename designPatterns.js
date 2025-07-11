@@ -146,3 +146,19 @@ class Handler {
     return null;
   }
 }
+
+// 11. Builder Pattern
+// Description: Separates the construction of a complex object from its representation.
+
+class Burger {
+  constructor() {
+    this.ingredients = [];
+  }
+  addIngredient(ing) {
+    this.ingredients.push(ing);
+    return this;
+  }
+  build() {
+    return `Burger with ${this.ingredients.join(", ")}`;
+  }
+}
