@@ -308,3 +308,20 @@ class ServiceLocator {
     return this.services[name];
   }
 }
+
+// 21. Bridge Pattern
+// Description: Decouples abstraction from implementation, allowing them to vary independently.
+
+class Device {
+  turnOn() {}
+  turnOff() {}
+}
+
+class RemoteControl {
+  constructor(device) {
+    this.device = device;
+  }
+  togglePower() {
+    console.log("Power toggled");
+  }
+}
