@@ -217,3 +217,21 @@ const carFactory = (() => {
     },
   };
 })();
+
+// 15. State Pattern
+// Description: Allows an object to alter its behavior when its internal state changes.
+
+class TrafficLight {
+  constructor() {
+    this.state = "green";
+  }
+  change() {
+    this.state =
+      this.state === "green"
+        ? "yellow"
+        : this.state === "yellow"
+        ? "red"
+        : "green";
+    console.log(`State: ${this.state}`);
+  }
+}
