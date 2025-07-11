@@ -325,3 +325,24 @@ class RemoteControl {
     console.log("Power toggled");
   }
 }
+
+// 22. Composite Pattern
+// Description: Treats individual objects and compositions of objects uniformly.
+
+class Leaf {
+  operation() {
+    return "Leaf";
+  }
+}
+
+class Composite {
+  constructor() {
+    this.children = [];
+  }
+  add(child) {
+    this.children.push(child);
+  }
+  operation() {
+    return this.children.map((c) => c.operation()).join(" + ");
+  }
+}
