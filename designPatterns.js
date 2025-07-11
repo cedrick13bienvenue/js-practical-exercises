@@ -162,3 +162,21 @@ class Burger {
     return `Burger with ${this.ingredients.join(", ")}`;
   }
 }
+
+// 12. Adapter Pattern
+// Description: Converts one interface to another expected by the client.
+
+class OldPrinter {
+  printOld(text) {
+    console.log(`Old: ${text}`);
+  }
+}
+
+class PrinterAdapter {
+  constructor(oldPrinter) {
+    this.oldPrinter = oldPrinter;
+  }
+  print(text) {
+    this.oldPrinter.printOld(text);
+  }
+}
