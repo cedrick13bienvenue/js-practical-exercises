@@ -295,3 +295,16 @@ class UserDAO {
     return this.users;
   }
 }
+
+// 20. Service Locator Pattern
+// Description: Provides a centralized registry for retrieving service instances.
+
+class ServiceLocator {
+  static services = {};
+  static register(name, instance) {
+    this.services[name] = instance;
+  }
+  static get(name) {
+    return this.services[name];
+  }
+}
