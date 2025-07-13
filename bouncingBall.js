@@ -166,3 +166,19 @@ function bouncingBall(h, bounce, window) {
 
   return count;
 }
+
+// OR
+
+function bouncingBall(h, bounce, window) {
+  if (h <= 0 || bounce <= 0 || bounce >= 1 || window >= h) return -1;
+
+  const bounces = [];
+  let height = h * bounce;
+
+  while (height > window) {
+    bounces.push(height);
+    height *= bounce;
+  }
+
+  return 1 + bounces.length * 2;
+}
