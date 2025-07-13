@@ -182,3 +182,19 @@ function bouncingBall(h, bounce, window) {
 
   return 1 + bounces.length * 2;
 }
+
+// OR
+
+function bouncingBall(h, bounce, window) {
+  if (h <= 0 || bounce <= 0 || bounce >= 1 || window >= h) return -1;
+
+  let n = 0;
+  let height = h;
+
+  while (height * bounce > window) {
+    height *= bounce;
+    n++;
+  }
+
+  return n * 2 + 1;
+}
