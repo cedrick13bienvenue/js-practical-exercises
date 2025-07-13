@@ -133,3 +133,17 @@ function bouncingBall(h, bounce, window) {
 
   return count;
 }
+
+// OR
+
+function bouncingBall(h, bounce, window) {
+  if (h <= 0 || bounce <= 0 || bounce >= 1 || window >= h) return -1;
+
+  function countBounces(height) {
+    if (height <= window) return 0;
+    const newHeight = height * bounce;
+    return 2 + countBounces(newHeight);
+  }
+
+  return 1 + countBounces(h * bounce); // First fall is seen once
+}
