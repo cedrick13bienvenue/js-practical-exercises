@@ -147,3 +147,22 @@ function bouncingBall(h, bounce, window) {
 
   return 1 + countBounces(h * bounce); // First fall is seen once
 }
+
+// OR
+
+function bouncingBall(h, bounce, window) {
+  if (h <= 0 || bounce <= 0 || bounce >= 1 || window >= h) return -1;
+
+  let count = 0;
+  let height = h;
+
+  do {
+    count++; // fall
+    height *= bounce;
+    if (height > window) {
+      count++; // bounce up
+    }
+  } while (height > window);
+
+  return count;
+}
