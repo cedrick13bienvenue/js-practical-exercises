@@ -105,3 +105,19 @@ function getTotalX(a, b) {
 }
 
 console.log(getTotalX([2, 4], [16, 32, 96])); // Output: 3
+
+// OR
+
+function getTotalX(a, b) {
+  const max = Math.min(...b);
+  const min = Math.max(...a);
+
+  const candidates = [];
+  for (let i = min; i <= max; i++) {
+    candidates.push(i);
+  }
+
+  return candidates.filter(
+    (n) => a.every((x) => n % x === 0) && b.every((x) => x % n === 0)
+  ).length;
+}
