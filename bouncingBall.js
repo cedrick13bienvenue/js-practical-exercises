@@ -114,3 +114,22 @@ function bouncingBall(h, bounce, window) {
 
   return count;
 }
+
+// OR
+
+function bouncingBall(h, bounce, window) {
+  if (h <= 0 || bounce <= 0 || bounce >= 1 || window >= h) return -1;
+
+  let count = 0;
+  let currentHeight = h;
+
+  while (currentHeight > window) {
+    count++; // Seen falling
+    currentHeight *= bounce;
+    if (currentHeight > window) {
+      count++; // Seen bouncing up
+    }
+  }
+
+  return count;
+}
