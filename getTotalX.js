@@ -136,3 +136,33 @@ function getTotalX(a, b) {
     (_, i) => lcmA * (i + 1)
   ).filter((x) => gcdB % x === 0).length;
 }
+
+// OR
+
+function getFactors(num) {
+  let factors = [];
+  for (let i = 1; i <= num; i++) {
+    if (num % i === 0) factors.push(i);
+  }
+  return factors;
+}
+
+function getMultiples(num, limit) {
+  let multiples = [];
+  for (let i = num; i <= limit; i += num) {
+    multiples.push(i);
+  }
+  return multiples;
+}
+
+function getTotalX(a, b) {
+  let lcmA = a.reduce((acc, val) => (acc * val) / gcd(acc, val));
+  let gcdB = b.reduce((acc, val) => gcd(acc, val));
+
+  function gcd(x, y) {
+    return y === 0 ? x : gcd(y, x % y);
+  }
+
+  const valid = getMultiples(lcmA, gcdB).filter((x) => gcdB % x === 0);
+  return valid.length;
+}
