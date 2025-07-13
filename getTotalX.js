@@ -121,3 +121,18 @@ function getTotalX(a, b) {
     (n) => a.every((x) => n % x === 0) && b.every((x) => x % n === 0)
   ).length;
 }
+
+// OR
+
+function getTotalX(a, b) {
+  const gcd = (x, y) => (y === 0 ? x : gcd(y, x % y));
+  const lcm = (x, y) => (x * y) / gcd(x, y);
+
+  const lcmA = a.reduce(lcm);
+  const gcdB = b.reduce(gcd);
+
+  return Array.from(
+    { length: Math.floor(gcdB / lcmA) },
+    (_, i) => lcmA * (i + 1)
+  ).filter((x) => gcdB % x === 0).length;
+}
