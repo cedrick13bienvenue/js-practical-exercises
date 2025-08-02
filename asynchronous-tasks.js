@@ -49,3 +49,21 @@ async function getPost() {
   }
 }
 getPost();
+
+// 5. Retry a failed async operation up to 3 times
+async function retryFetch(url, retries = 3) {
+  while (retries > 0) {
+    try {
+      const res = await fetch(url);
+      if (!res.ok) throw new Error("Failed");
+      return await res.json();
+    } catch (e) {
+      retries--;
+      if (retries === 0) throw e;
+    }
+  }
+}
+
+retryFetch("https://jsonplaceholder.typicode.com/posts/1")
+  .then(console.log)
+  .catch(console.error);
