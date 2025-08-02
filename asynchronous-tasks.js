@@ -104,3 +104,20 @@ async function processAll(items) {
 }
 
 processAll(items);
+
+// 8. Throttle async requests (one at a time)
+
+const urls = [
+  "https://jsonplaceholder.typicode.com/posts/1",
+  "https://jsonplaceholder.typicode.com/posts/2",
+];
+
+async function fetchSequential(urls) {
+  for (const url of urls) {
+    const res = await fetch(url);
+    const data = await res.json();
+    console.log(data.title);
+  }
+}
+
+fetchSequential(urls);
