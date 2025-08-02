@@ -12,3 +12,16 @@ function getDataPromise() {
 }
 
 getDataPromise().then(console.log); // "data received"
+
+// 2. Create a custom delay(ms) function
+
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function run() {
+  console.log("Start");
+  await delay(1000);
+  console.log("1 second later");
+}
+run();
