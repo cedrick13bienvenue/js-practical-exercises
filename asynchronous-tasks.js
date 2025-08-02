@@ -36,3 +36,16 @@ async function fetchBoth() {
   console.log(user.name, todos.title);
 }
 fetchBoth();
+
+// 4. Handle async errors using try/catch
+
+async function getPost() {
+  try {
+    const res = await fetch("https://jsonplaceholder.typicode.com/invalid");
+    const data = await res.json();
+    console.log(data);
+  } catch (err) {
+    console.error("Error:", err.message);
+  }
+}
+getPost();
