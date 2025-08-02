@@ -83,3 +83,24 @@ withTimeout(fetch("https://jsonplaceholder.typicode.com/posts/1"), 500)
   .then((r) => r.json())
   .then(console.log)
   .catch(console.error);
+
+// 7. Sequentially process an array with async/await
+
+const items = [1, 2, 3];
+
+async function processItem(item) {
+  return new Promise((resolve) =>
+    setTimeout(() => {
+      console.log("Processed:", item);
+      resolve();
+    }, 500)
+  );
+}
+
+async function processAll(items) {
+  for (const item of items) {
+    await processItem(item);
+  }
+}
+
+processAll(items);
