@@ -121,3 +121,25 @@ async function fetchSequential(urls) {
 }
 
 fetchSequential(urls);
+
+// 9. Create a fake async function that randomly succeeds or fails
+
+function fakeAsyncJob(name) {
+  return new Promise((resolve, reject) => {
+    const success = Math.random() > 0.5;
+    setTimeout(() => {
+      if (success) resolve(`${name} succeeded`);
+      else reject(`${name} failed`);
+    }, 500);
+  });
+}
+
+async function run() {
+  try {
+    const result = await fakeAsyncJob("Job A");
+    console.log(result);
+  } catch (err) {
+    console.error(err);
+  }
+}
+run();
