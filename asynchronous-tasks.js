@@ -25,3 +25,5 @@ async function run() {
   console.log("1 second later");
 }
 run();
+
+// 3. Write an async function that fetches two APIs in parallel
