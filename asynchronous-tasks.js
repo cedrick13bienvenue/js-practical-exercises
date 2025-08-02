@@ -67,3 +67,19 @@ async function retryFetch(url, retries = 3) {
 retryFetch("https://jsonplaceholder.typicode.com/posts/1")
   .then(console.log)
   .catch(console.error);
+
+// 6. Create a timeout wrapper for any async function
+
+function withTimeout(promise, ms) {
+  return Promise.race([
+    promise,
+    new Promise((_, reject) =>
+      setTimeout(() => reject(new Error("Timeout")), ms)
+    ),
+  ]);
+}
+
+withTimeout(fetch("https://jsonplaceholder.typicode.com/posts/1"), 500)
+  .then((r) => r.json())
+  .then(console.log)
+  .catch(console.error);
