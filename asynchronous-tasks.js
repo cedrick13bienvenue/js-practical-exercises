@@ -143,3 +143,27 @@ async function run() {
   }
 }
 run();
+
+// 10. Implement a queue of async tasks
+
+const tasks = [
+  () => delayLog("A", 1000),
+  () => delayLog("B", 500),
+  () => delayLog("C", 300),
+];
+
+function delayLog(label, ms) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log("Done:", label);
+      resolve();
+    }, ms);
+  });
+}
+
+async function runQueue(tasks) {
+  for (const task of tasks) {
+    await task();
+  }
+}
+runQueue(tasks);
