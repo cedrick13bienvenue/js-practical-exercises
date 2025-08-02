@@ -27,3 +27,12 @@ async function run() {
 run();
 
 // 3. Write an async function that fetches two APIs in parallel
+
+async function fetchBoth() {
+  const [user, todos] = await Promise.all([
+    fetch("https://jsonplaceholder.typicode.com/users/1").then((r) => r.json()),
+    fetch("https://jsonplaceholder.typicode.com/todos/1").then((r) => r.json()),
+  ]);
+  console.log(user.name, todos.title);
+}
+fetchBoth();
