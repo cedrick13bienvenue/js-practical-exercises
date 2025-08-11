@@ -1,4 +1,5 @@
-{/*Given two arrays a and b write a function comp(a, b) (orcompSame(a, b)) that checks whether the two arrays have 
+{
+  /*Given two arrays a and b write a function comp(a, b) (orcompSame(a, b)) that checks whether the two arrays have 
 the "same" elements, with the same multiplicities (the multiplicity of a member is the number of times it appears). 
 "Same" means, here, that the elements in b are the elements in a squared, regardless of the order.
 
@@ -27,17 +28,18 @@ a or b might be [] or {} (all languages except R, Shell).
 a or b might be nil or null or None or nothing (except in C++, COBOL, Crystal, D, Dart, Elixir, Fortran, F#, Haskell, Nim, OCaml, Pascal, Perl, PowerShell, Prolog, PureScript, R, Racket, Rust, Shell, Swift).
 If a or b are nil (or null or None, depending on the language), the problem doesn't make sense so return false.
 
-*/}
+*/
+}
 
-function comp(array1,array2){
-    if(!array1 || !array2 || array1.length !== array2.length){
-        return false
-    }
-    let arr = array1.map(a=>a*a)
-    let s1 = [...arr].sort()
-    let s2 = [...arr2].sort()
-    return s1.every((x,y)=>x === s2[y])
-} 
+function comp(array1, array2) {
+  if (!array1 || !array2 || array1.length !== array2.length) {
+    return false;
+  }
+  let arr = array1.map((a) => a * a);
+  let s1 = [...arr].sort();
+  let s2 = [...arr2].sort();
+  return s1.every((x, y) => x === s2[y]);
+}
 
 // Using Frequency Maps
 
@@ -50,22 +52,25 @@ function comp(a, b) {
       return map;
     }, {});
 
-  const aSquares = a.map(x => x * x);
+  const aSquares = a.map((x) => x * x);
   const mapA = count(aSquares);
   const mapB = count(b);
 
-  return Object.keys(mapA).every(key => mapA[key] === mapB[key]);
+  return Object.keys(mapA).every((key) => mapA[key] === mapB[key]);
 }
 
 // One-Liner with Sorting
- 
+
 const comp = (a, b) =>
-  !!a && !!b &&
+  !!a &&
+  !!b &&
   a.length === b.length &&
-  a.map(x => x ** 2).sort((m, n) => m - n).every((x, i) => x === b.sort((m, n) => m - n)[i]);
+  a
+    .map((x) => x ** 2)
+    .sort((m, n) => m - n)
+    .every((x, i) => x === b.sort((m, n) => m - n)[i]);
 
-
-// Using Map Object 
+// Using Map Object
 
 function comp(a, b) {
   if (!a || !b || a.length !== b.length) return false;
@@ -78,7 +83,7 @@ function comp(a, b) {
     return map;
   };
 
-  const aSquared = a.map(x => x * x);
+  const aSquared = a.map((x) => x * x);
   const mapA = freqMap(aSquared);
   const mapB = freqMap(b);
 
@@ -87,4 +92,12 @@ function comp(a, b) {
   }
 
   return true;
+}
+// OR
+
+function comp(a, b) {
+  if (!a || !b || a.length !== b.length) return false;
+  a = a.map((x) => x * x).sort((x, y) => x - y);
+  b = b.sort((x, y) => x - y);
+  return a.every((val, i) => val === b[i]);
 }
