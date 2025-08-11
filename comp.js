@@ -101,3 +101,20 @@ function comp(a, b) {
   b = b.sort((x, y) => x - y);
   return a.every((val, i) => val === b[i]);
 }
+
+// OR
+
+function comp(a, b) {
+  if (!a || !b || a.length !== b.length) return false;
+
+  const count = (arr) =>
+    arr.reduce((acc, val) => {
+      acc[val] = (acc[val] || 0) + 1;
+      return acc;
+    }, {});
+
+  const mapA = count(a.map((x) => x * x));
+  const mapB = count(b);
+
+  return Object.keys(mapA).every((k) => mapA[k] === mapB[k]);
+}
