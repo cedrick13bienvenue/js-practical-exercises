@@ -128,3 +128,13 @@ function accumReduce(s) {
     return acc + (acc ? "-" : "") + part;
   }, "");
 }
+
+// OR
+
+function accumPush(s) {
+  let parts = [];
+  for (let i = 0; i < s.length; i++) {
+    parts.push(s[i].toUpperCase() + s[i].toLowerCase().repeat(i));
+  }
+  return parts.join("-");
+}
