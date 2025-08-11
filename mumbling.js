@@ -84,3 +84,12 @@ function accum(s) {
 
   return parts.join("-");
 }
+
+// OR
+
+function accumMap(s) {
+  return s
+    .split("")
+    .map((char, index) => char.toUpperCase() + char.toLowerCase().repeat(index))
+    .join("-");
+}
