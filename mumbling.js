@@ -119,3 +119,12 @@ function accumForOf(s) {
   }
   return result.join("-");
 }
+
+// OR
+
+function accumReduce(s) {
+  return s.split("").reduce((acc, char, i) => {
+    let part = char.toUpperCase() + char.toLowerCase().repeat(i);
+    return acc + (acc ? "-" : "") + part;
+  }, "");
+}
