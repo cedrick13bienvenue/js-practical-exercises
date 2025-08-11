@@ -140,3 +140,18 @@ function comp(a, b) {
   }
   return true;
 }
+
+// OR
+
+function comp(a, b) {
+  if (!a || !b || a.length !== b.length) return false;
+
+  return a
+    .map((x) => x * x)
+    .every((val) => {
+      const idx = b.indexOf(val);
+      if (idx === -1) return false;
+      b.splice(idx, 1); // remove matched element
+      return true;
+    });
+}
