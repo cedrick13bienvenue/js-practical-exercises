@@ -118,3 +118,25 @@ function comp(a, b) {
 
   return Object.keys(mapA).every((k) => mapA[k] === mapB[k]);
 }
+
+// OR
+
+function comp(a, b) {
+  if (!a || !b || a.length !== b.length) return false;
+
+  const freqMap = (arr) => {
+    const map = new Map();
+    for (let val of arr) {
+      map.set(val, (map.get(val) || 0) + 1);
+    }
+    return map;
+  };
+
+  const mapA = freqMap(a.map((x) => x * x));
+  const mapB = freqMap(b);
+
+  for (let [key, val] of mapA.entries()) {
+    if (mapB.get(key) !== val) return false;
+  }
+  return true;
+}
