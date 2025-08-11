@@ -93,3 +93,17 @@ function accumMap(s) {
     .map((char, index) => char.toUpperCase() + char.toLowerCase().repeat(index))
     .join("-");
 }
+
+// OR
+
+function accumLoop(s) {
+  let result = "";
+  for (let i = 0; i < s.length; i++) {
+    let char = s[i].toUpperCase();
+    for (let j = 0; j < i; j++) {
+      char += s[i].toLowerCase();
+    }
+    result += char + (i < s.length - 1 ? "-" : "");
+  }
+  return result;
+}
