@@ -155,3 +155,14 @@ function comp(a, b) {
       return true;
     });
 }
+
+// OR
+
+const comp = (a, b) =>
+  !!a &&
+  !!b &&
+  a.length === b.length &&
+  a
+    .map((x) => x ** 2)
+    .sort((m, n) => m - n)
+    .every((x, i) => x === b.sort((m, n) => m - n)[i]);
