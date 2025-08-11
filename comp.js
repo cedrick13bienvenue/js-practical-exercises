@@ -166,3 +166,18 @@ const comp = (a, b) =>
     .map((x) => x ** 2)
     .sort((m, n) => m - n)
     .every((x, i) => x === b.sort((m, n) => m - n)[i]);
+
+// OR
+
+function comp(a, b) {
+  if (!a || !b || a.length !== b.length) return false;
+
+  const freq = (arr) => arr.reduce((m, v) => ((m[v] = (m[v] || 0) + 1), m), {});
+  const mapA = freq(a.map((x) => x * x));
+  const mapB = freq(b);
+
+  return (
+    Object.keys(mapA).length === Object.keys(mapB).length &&
+    Object.keys(mapA).every((k) => mapA[k] === mapB[k])
+  );
+}
