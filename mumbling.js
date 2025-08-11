@@ -107,3 +107,15 @@ function accumLoop(s) {
   }
   return result;
 }
+
+// OR
+
+function accumForOf(s) {
+  let result = [];
+  let index = 0;
+  for (let char of s) {
+    result.push(char.toUpperCase() + char.toLowerCase().repeat(index));
+    index++;
+  }
+  return result.join("-");
+}
