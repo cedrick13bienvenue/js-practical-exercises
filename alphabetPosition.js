@@ -168,3 +168,14 @@ function alphabetPosition(text) {
     .map((ch) => ch.charCodeAt(0) - 96)
     .join(" ");
 }
+
+// OR
+
+function alphabetPosition(text) {
+  return text
+    .toLowerCase()
+    .split("")
+    .map((ch) => (ch >= "a" && ch <= "z" ? ch.charCodeAt(0) - 96 : null))
+    .filter((num) => num !== null)
+    .join(" ");
+}
