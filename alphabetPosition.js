@@ -139,3 +139,12 @@ function alphabetPosition(text) {
 }
 
 // OR
+
+function alphabetPosition(text) {
+  return text
+    .toLowerCase()
+    .replace(/[^a-z]/g, "") // remove non-letters
+    .split("")
+    .map((ch) => ch.charCodeAt(0) - 96)
+    .join(" ");
+}
