@@ -1,4 +1,5 @@
-{/*Sam's house has an apple tree and an orange tree that yield an abundance of fruit. Using the information given below, determine the number of apples and oranges that land on Sam's house.
+{
+  /*Sam's house has an apple tree and an orange tree that yield an abundance of fruit. Using the information given below, determine the number of apples and oranges that land on Sam's house.
 
 In the diagram below:
 
@@ -60,42 +61,59 @@ The third apple falls at position .
 The first orange falls at position .
 The second orange falls at position .
 Only one fruit (the second apple) falls within the region between  and , so we print  as our first line of output.
-Only the second orange falls within the region between  and , so we print  as our second line of output. */}
+Only the second orange falls within the region between  and , so we print  as our second line of output. */
+}
 
 function countApplesAndOranges(s, t, a, b, apples, oranges) {
-    // Calculate apples
-    const appleCount = apples.filter(x => {
-        const position = a + x;
-        return position >= s && position <= t;
-    }).length;
-    
-    // Calculate oranges
-    const orangeCount = oranges.filter(x => {
-        const position = b + x;
-        return position >= s && position <= t;
-    }).length;
-    
-    console.log(appleCount);
-    console.log(orangeCount);
-} 
+  // Calculate apples
+  const appleCount = apples.filter((x) => {
+    const position = a + x;
+    return position >= s && position <= t;
+  }).length;
 
-// OR 
+  // Calculate oranges
+  const orangeCount = oranges.filter((x) => {
+    const position = b + x;
+    return position >= s && position <= t;
+  }).length;
+
+  console.log(appleCount);
+  console.log(orangeCount);
+}
+
+// OR
 
 function countApplesAndOranges(s, t, a, b, apples, oranges) {
-    // Count how many apples fall on the house
-    let applesOnHouse = apples.filter(apple => {
-      let landingPosition = a + apple; // where the apple lands
-      return landingPosition >= s && landingPosition <= t;
-    }).length;
-  
-    // Count how many oranges fall on the house
-    let orangesOnHouse = oranges.filter(orange => {
-      let landingPosition = b + orange; // where the orange lands
-      return landingPosition >= s && landingPosition <= t;
-    }).length;
-  
-    // Print the results
-    console.log(applesOnHouse);
-    console.log(orangesOnHouse);
-  }
-  
+  // Count how many apples fall on the house
+  let applesOnHouse = apples.filter((apple) => {
+    let landingPosition = a + apple; // where the apple lands
+    return landingPosition >= s && landingPosition <= t;
+  }).length;
+
+  // Count how many oranges fall on the house
+  let orangesOnHouse = oranges.filter((orange) => {
+    let landingPosition = b + orange; // where the orange lands
+    return landingPosition >= s && landingPosition <= t;
+  }).length;
+
+  // Print the results
+  console.log(applesOnHouse);
+  console.log(orangesOnHouse);
+}
+
+// OR
+
+function countApplesAndOranges(s, t, a, b, apples, oranges) {
+  const appleCount = apples.reduce((count, d) => {
+    const pos = a + d;
+    return pos >= s && pos <= t ? count + 1 : count;
+  }, 0);
+
+  const orangeCount = oranges.reduce((count, d) => {
+    const pos = b + d;
+    return pos >= s && pos <= t ? count + 1 : count;
+  }, 0);
+
+  console.log(appleCount);
+  console.log(orangeCount);
+}
