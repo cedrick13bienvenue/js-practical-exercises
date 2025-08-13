@@ -148,3 +148,15 @@ function alphabetPosition(text) {
     .map((ch) => ch.charCodeAt(0) - 96)
     .join(" ");
 }
+
+// OR
+
+function alphabetPosition(text) {
+  let result = [];
+  for (let ch of text.toLowerCase()) {
+    if (ch >= "a" && ch <= "z") {
+      result.push(ch.charCodeAt(0) - 96);
+    }
+  }
+  return result.join(" ");
+}
