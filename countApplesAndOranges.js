@@ -150,3 +150,14 @@ function countApplesAndOranges(s, t, a, b, apples, oranges) {
   console.log(countFruits(a, apples));
   console.log(countFruits(b, oranges));
 }
+
+// OR
+
+function countApplesAndOranges(s, t, a, b, apples, oranges) {
+  console.log(
+    apples.map((d) => a + d).filter((pos) => pos >= s && pos <= t).length
+  );
+  console.log(
+    oranges.map((d) => b + d).filter((pos) => pos >= s && pos <= t).length
+  );
+}
