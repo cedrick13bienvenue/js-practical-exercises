@@ -122,3 +122,20 @@ function alphabetPosition(text) {
     .map((ch) => ch.charCodeAt(0) - 96)
     .join(" ");
 }
+
+// OR
+
+function alphabetPosition(text) {
+  return text
+    .toLowerCase()
+    .split("")
+    .reduce((acc, ch) => {
+      if (ch >= "a" && ch <= "z") {
+        acc.push(ch.charCodeAt(0) - 96);
+      }
+      return acc;
+    }, [])
+    .join(" ");
+}
+
+// OR
