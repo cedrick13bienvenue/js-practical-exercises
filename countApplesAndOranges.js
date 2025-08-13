@@ -161,3 +161,20 @@ function countApplesAndOranges(s, t, a, b, apples, oranges) {
     oranges.map((d) => b + d).filter((pos) => pos >= s && pos <= t).length
   );
 }
+
+// OR
+
+function countApplesAndOranges(s, t, a, b, apples, oranges) {
+  let appleCount = 0,
+    orangeCount = 0;
+
+  for (let d of apples) {
+    if (a + d >= s && a + d <= t) appleCount++;
+  }
+  for (let d of oranges) {
+    if (b + d >= s && b + d <= t) orangeCount++;
+  }
+
+  console.log(appleCount);
+  console.log(orangeCount);
+}
