@@ -117,3 +117,22 @@ function countApplesAndOranges(s, t, a, b, apples, oranges) {
   console.log(appleCount);
   console.log(orangeCount);
 }
+
+// OR
+
+function countApplesAndOranges(s, t, a, b, apples, oranges) {
+  let appleCount = 0;
+  for (let d of apples) {
+    let pos = a + d;
+    if (pos >= s && pos <= t) appleCount++;
+  }
+
+  let orangeCount = 0;
+  for (let d of oranges) {
+    let pos = b + d;
+    if (pos >= s && pos <= t) orangeCount++;
+  }
+
+  console.log(appleCount);
+  console.log(orangeCount);
+}
