@@ -81,3 +81,15 @@ function powersOfTwo(n) {
   }
   return result;
 }
+
+// OR
+
+function* generatePowers(n) {
+  for (let i = 0; i <= n; i++) {
+    yield 2 ** i;
+  }
+}
+
+function powersOfTwo(n) {
+  return [...generatePowers(n)];
+}
