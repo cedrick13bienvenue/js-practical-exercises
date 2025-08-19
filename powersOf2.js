@@ -93,3 +93,9 @@ function* generatePowers(n) {
 function powersOfTwo(n) {
   return [...generatePowers(n)];
 }
+
+// OR
+
+function powersOfTwo(n) {
+  return [...Array(n + 1).keys()].map((i) => 2 ** i);
+}
