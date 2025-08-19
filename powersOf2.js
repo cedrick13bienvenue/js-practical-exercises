@@ -59,3 +59,15 @@ function powersOfTwo(n) {
   }
   return result;
 }
+
+// OR
+
+function powersOfTwo(n) {
+  let result = [];
+  let i = 0;
+  do {
+    result.push(2 ** i);
+    i++;
+  } while (i <= n);
+  return result;
+}
