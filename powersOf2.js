@@ -27,3 +27,12 @@ function powersOfTwo(n) {
 function powersOfTwo(n) {
   return [...Array(n + 1)].map((_, i) => 2 ** i);
 }
+
+// OR
+
+function powersOfTwo(n) {
+  if (n === 0) return [1];
+  const prev = powersOfTwo(n - 1);
+  prev.push(2 ** n);
+  return prev;
+}
