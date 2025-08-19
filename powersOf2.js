@@ -36,3 +36,14 @@ function powersOfTwo(n) {
   prev.push(2 ** n);
   return prev;
 }
+
+// OR
+
+function powersOfTwo(n) {
+  return Array(n + 1)
+    .fill()
+    .reduce((acc, _, i) => {
+      acc.push(2 ** i);
+      return acc;
+    }, []);
+}
