@@ -47,3 +47,15 @@ function powersOfTwo(n) {
       return acc;
     }, []);
 }
+
+// OR
+
+function powersOfTwo(n) {
+  let result = [];
+  let i = 0;
+  while (i <= n) {
+    result.push(2 ** i);
+    i++;
+  }
+  return result;
+}
